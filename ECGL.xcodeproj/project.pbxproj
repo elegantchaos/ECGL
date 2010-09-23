@@ -1,0 +1,891 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		22FDC6C2120615F900011C6F /* Everything */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "Everything" */;
+			buildPhases = (
+			);
+			dependencies = (
+				22FDC6C9120615FF00011C6F /* PBXTargetDependency */,
+				22FDC6CB120615FF00011C6F /* PBXTargetDependency */,
+				22FDC6CD120615FF00011C6F /* PBXTargetDependency */,
+			);
+			name = Everything;
+			productName = Everything;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		223CBAD81205C51F0008A641 /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBAD71205C51F0008A641 /* GHUnitTestMain.m */; };
+		22561F4A124B873A00E7D281 /* ECGLAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F35124B873A00E7D281 /* ECGLAttribute.h */; };
+		22561F4B124B873A00E7D281 /* ECGLAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F36124B873A00E7D281 /* ECGLAttribute.m */; };
+		22561F4C124B873A00E7D281 /* ECGLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F37124B873A00E7D281 /* ECGLCommon.h */; };
+		22561F4D124B873A00E7D281 /* ECGLFragmentShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F38124B873A00E7D281 /* ECGLFragmentShader.h */; };
+		22561F4E124B873A00E7D281 /* ECGLFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F39124B873A00E7D281 /* ECGLFragmentShader.m */; };
+		22561F4F124B873A00E7D281 /* ECGLLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F3A124B873A00E7D281 /* ECGLLoader.h */; };
+		22561F50124B873A00E7D281 /* ECGLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F3B124B873A00E7D281 /* ECGLLoader.m */; };
+		22561F51124B873A00E7D281 /* ECGLMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F3C124B873A00E7D281 /* ECGLMesh.h */; };
+		22561F52124B873A00E7D281 /* ECGLMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F3D124B873A00E7D281 /* ECGLMesh.m */; };
+		22561F53124B873A00E7D281 /* ECGLShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F3E124B873A00E7D281 /* ECGLShader.h */; };
+		22561F54124B873A00E7D281 /* ECGLShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F3F124B873A00E7D281 /* ECGLShader.m */; };
+		22561F55124B873A00E7D281 /* ECGLShaderProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F40124B873A00E7D281 /* ECGLShaderProgram.h */; };
+		22561F56124B873A00E7D281 /* ECGLShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F41124B873A00E7D281 /* ECGLShaderProgram.m */; };
+		22561F57124B873A00E7D281 /* ECGLTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F42124B873A00E7D281 /* ECGLTexture.h */; };
+		22561F58124B873A00E7D281 /* ECGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F43124B873A00E7D281 /* ECGLTexture.m */; };
+		22561F59124B873A00E7D281 /* ECGLTextureLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F44124B873A00E7D281 /* ECGLTextureLink.h */; };
+		22561F5A124B873A00E7D281 /* ECGLTextureLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F45124B873A00E7D281 /* ECGLTextureLink.m */; };
+		22561F5B124B873A00E7D281 /* ECGLVertexShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F46124B873A00E7D281 /* ECGLVertexShader.h */; };
+		22561F5C124B873A00E7D281 /* ECGLVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F47124B873A00E7D281 /* ECGLVertexShader.m */; };
+		22561F5D124B873A00E7D281 /* ECGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22561F48124B873A00E7D281 /* ECGLView.h */; };
+		22561F5E124B873A00E7D281 /* ECGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22561F49124B873A00E7D281 /* ECGLView.m */; };
+		22561F63124B874800E7D281 /* ECGLAdHocPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22561F5F124B874800E7D281 /* ECGLAdHocPrefix.pch */; };
+		22561F64124B874800E7D281 /* ECGLDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22561F60124B874800E7D281 /* ECGLDebugPrefix.pch */; };
+		22561F65124B874800E7D281 /* ECGLReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22561F61124B874800E7D281 /* ECGLReleasePrefix.pch */; };
+		22561F66124B874800E7D281 /* ECGLSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22561F62124B874800E7D281 /* ECGLSharedPrefix.pch */; };
+		22728C0A124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C06124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig */; };
+		22728C0B124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C07124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig */; };
+		22728C0C124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C08124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig */; };
+		22728C0D124A2C7E00A9881F /* ECIOSSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C09124A2C7E00A9881F /* ECIOSSharedSettings.xcconfig */; };
+		22728C0E124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C06124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig */; };
+		22728C0F124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C07124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig */; };
+		22728C10124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C08124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig */; };
+		22728C11124A2C7E00A9881F /* ECIOSSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C09124A2C7E00A9881F /* ECIOSSharedSettings.xcconfig */; };
+		227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227333B811EBBA3000695FB4 /* GHUnit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22728B4D124A28C800A9881F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22728B42124A28C800A9881F /* ECFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = ECFoundation;
+		};
+		22728B4F124A28C800A9881F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22728B42124A28C800A9881F /* ECFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22FBFE6711DD0D9400578A66;
+			remoteInfo = "ECFoundation Touch";
+		};
+		22728B51124A28C800A9881F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22728B42124A28C800A9881F /* ECFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 225EC67211EBAA4800A97AEA;
+			remoteInfo = "ECFoundation SenTest";
+		};
+		22728B53124A28C800A9881F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22728B42124A28C800A9881F /* ECFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 227333A411EBBA0800695FB4;
+			remoteInfo = "ECFoundation GHUnit";
+		};
+		22728B57124A28E400A9881F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22728B42124A28C800A9881F /* ECFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 22FBFE6611DD0D9400578A66;
+			remoteInfo = "ECFoundation Touch";
+		};
+		22FDC6C8120615FF00011C6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22FBFE6611DD0D9400578A66;
+			remoteInfo = "ECFoundation Touch";
+		};
+		22FDC6CA120615FF00011C6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 225EC67111EBAA4800A97AEA;
+			remoteInfo = "ECFoundation SenTest";
+		};
+		22FDC6CC120615FF00011C6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 227333A311EBBA0800695FB4;
+			remoteInfo = "ECFoundation GHUnit";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		223CBAD71205C51F0008A641 /* GHUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitTestMain.m; sourceTree = "<group>"; };
+		223CBAE61205C6380008A641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		223CBAE71205C66A0008A641 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		223CBAE91205C67C0008A641 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22561F35124B873A00E7D281 /* ECGLAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLAttribute.h; sourceTree = "<group>"; };
+		22561F36124B873A00E7D281 /* ECGLAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLAttribute.m; sourceTree = "<group>"; };
+		22561F37124B873A00E7D281 /* ECGLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLCommon.h; sourceTree = "<group>"; };
+		22561F38124B873A00E7D281 /* ECGLFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLFragmentShader.h; sourceTree = "<group>"; };
+		22561F39124B873A00E7D281 /* ECGLFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLFragmentShader.m; sourceTree = "<group>"; };
+		22561F3A124B873A00E7D281 /* ECGLLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLLoader.h; sourceTree = "<group>"; };
+		22561F3B124B873A00E7D281 /* ECGLLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLLoader.m; sourceTree = "<group>"; };
+		22561F3C124B873A00E7D281 /* ECGLMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLMesh.h; sourceTree = "<group>"; };
+		22561F3D124B873A00E7D281 /* ECGLMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLMesh.m; sourceTree = "<group>"; };
+		22561F3E124B873A00E7D281 /* ECGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLShader.h; sourceTree = "<group>"; };
+		22561F3F124B873A00E7D281 /* ECGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLShader.m; sourceTree = "<group>"; };
+		22561F40124B873A00E7D281 /* ECGLShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLShaderProgram.h; sourceTree = "<group>"; };
+		22561F41124B873A00E7D281 /* ECGLShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLShaderProgram.m; sourceTree = "<group>"; };
+		22561F42124B873A00E7D281 /* ECGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLTexture.h; sourceTree = "<group>"; };
+		22561F43124B873A00E7D281 /* ECGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLTexture.m; sourceTree = "<group>"; };
+		22561F44124B873A00E7D281 /* ECGLTextureLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLTextureLink.h; sourceTree = "<group>"; };
+		22561F45124B873A00E7D281 /* ECGLTextureLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLTextureLink.m; sourceTree = "<group>"; };
+		22561F46124B873A00E7D281 /* ECGLVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLVertexShader.h; sourceTree = "<group>"; };
+		22561F47124B873A00E7D281 /* ECGLVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLVertexShader.m; sourceTree = "<group>"; };
+		22561F48124B873A00E7D281 /* ECGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLView.h; sourceTree = "<group>"; };
+		22561F49124B873A00E7D281 /* ECGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLView.m; sourceTree = "<group>"; };
+		22561F5F124B874800E7D281 /* ECGLAdHocPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLAdHocPrefix.pch; sourceTree = "<group>"; };
+		22561F60124B874800E7D281 /* ECGLDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLDebugPrefix.pch; sourceTree = "<group>"; };
+		22561F61124B874800E7D281 /* ECGLReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLReleasePrefix.pch; sourceTree = "<group>"; };
+		22561F62124B874800E7D281 /* ECGLSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLSharedPrefix.pch; sourceTree = "<group>"; };
+		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22728B42124A28C800A9881F /* ECFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ECFoundation.xcodeproj; path = ../ECFoundation/ECFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
+		22728C06124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSAdHocSettings.xcconfig; sourceTree = "<group>"; };
+		22728C07124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSDebugSettings.xcconfig; sourceTree = "<group>"; };
+		22728C08124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSReleaseSettings.xcconfig; sourceTree = "<group>"; };
+		22728C09124A2C7E00A9881F /* ECIOSSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSSharedSettings.xcconfig; sourceTree = "<group>"; };
+		227333A411EBBA0800695FB4 /* ECTouch GHUnit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECTouch GHUnit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
+		2286311211E32FC100654739 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
+		22FBFE6711DD0D9400578A66 /* libECGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		22FD5E111214490C0009DD71 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		22FD5E131214490C0009DD71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		225EC66F11EBAA4800A97AEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227333A211EBBA0800695FB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22FBFE6511DD0D9400578A66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* products */ = {
+			isa = PBXGroup;
+			children = (
+				22FBFE6711DD0D9400578A66 /* libECGL.a */,
+				225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */,
+				227333A411EBBA0800695FB4 /* ECTouch GHUnit Tests.app */,
+			);
+			name = products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* ECFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* source */,
+				089C1665FE841158C02AAC07 /* resources */,
+				0867D69AFE84028FC02AAC07 /* frameworks */,
+				034768DFFF38A50411DB9C8B /* products */,
+			);
+			name = ECFoundation;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22728BE6124A2BFD00A9881F /* ECFoundation */,
+				223CBAE11205C5930008A641 /* iOS */,
+				1058C7B2FEA5585E11CA2CBB /* Testing */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				227EEB8E11A6BCD2009420F7 /* prefix */,
+				2286307311E32AA800654739 /* touch */,
+				227333BC11EBBAA400695FB4 /* tests */,
+			);
+			name = source;
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				227333B811EBBA3000695FB4 /* GHUnit.framework */,
+			);
+			name = Testing;
+			sourceTree = "<group>";
+		};
+		223CBAD61205C51F0008A641 /* ghunit */ = {
+			isa = PBXGroup;
+			children = (
+				223CBAD71205C51F0008A641 /* GHUnitTestMain.m */,
+			);
+			path = ghunit;
+			sourceTree = "<group>";
+		};
+		223CBAE11205C5930008A641 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				22FD5E111214490C0009DD71 /* OpenGLES.framework */,
+				223CBAE91205C67C0008A641 /* CoreGraphics.framework */,
+				223CBAE71205C66A0008A641 /* UIKit.framework */,
+				223CBAE61205C6380008A641 /* Foundation.framework */,
+				2286311211E32FC100654739 /* CoreLocation.framework */,
+				22FD5E131214490C0009DD71 /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		22728B43124A28C800A9881F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22728B4E124A28C800A9881F /* ECFoundation.framework */,
+				22728B50124A28C800A9881F /* libECFoundation.a */,
+				22728B52124A28C800A9881F /* EC Foundation Unit Tests.octest */,
+				22728B54124A28C800A9881F /* GHUnit Tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22728BB9124A2BF200A9881F /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				22728C06124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig */,
+				22728C07124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig */,
+				22728C08124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig */,
+				22728C09124A2C7E00A9881F /* ECIOSSharedSettings.xcconfig */,
+			);
+			name = configuration;
+			path = ../ECFoundation/source/configuration;
+			sourceTree = SOURCE_ROOT;
+		};
+		22728BE6124A2BFD00A9881F /* ECFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				22728BB9124A2BF200A9881F /* configuration */,
+				22728B42124A28C800A9881F /* ECFoundation.xcodeproj */,
+			);
+			name = ECFoundation;
+			sourceTree = "<group>";
+		};
+		227333BC11EBBAA400695FB4 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				223CBAD61205C51F0008A641 /* ghunit */,
+			);
+			name = tests;
+			path = source/tests;
+			sourceTree = "<group>";
+		};
+		227EEB8E11A6BCD2009420F7 /* prefix */ = {
+			isa = PBXGroup;
+			children = (
+				22561F5F124B874800E7D281 /* ECGLAdHocPrefix.pch */,
+				22561F60124B874800E7D281 /* ECGLDebugPrefix.pch */,
+				22561F61124B874800E7D281 /* ECGLReleasePrefix.pch */,
+				22561F62124B874800E7D281 /* ECGLSharedPrefix.pch */,
+			);
+			name = prefix;
+			path = source/prefix;
+			sourceTree = "<group>";
+		};
+		2286307311E32AA800654739 /* touch */ = {
+			isa = PBXGroup;
+			children = (
+				22561F35124B873A00E7D281 /* ECGLAttribute.h */,
+				22561F36124B873A00E7D281 /* ECGLAttribute.m */,
+				22561F37124B873A00E7D281 /* ECGLCommon.h */,
+				22561F38124B873A00E7D281 /* ECGLFragmentShader.h */,
+				22561F39124B873A00E7D281 /* ECGLFragmentShader.m */,
+				22561F3A124B873A00E7D281 /* ECGLLoader.h */,
+				22561F3B124B873A00E7D281 /* ECGLLoader.m */,
+				22561F3C124B873A00E7D281 /* ECGLMesh.h */,
+				22561F3D124B873A00E7D281 /* ECGLMesh.m */,
+				22561F3E124B873A00E7D281 /* ECGLShader.h */,
+				22561F3F124B873A00E7D281 /* ECGLShader.m */,
+				22561F40124B873A00E7D281 /* ECGLShaderProgram.h */,
+				22561F41124B873A00E7D281 /* ECGLShaderProgram.m */,
+				22561F42124B873A00E7D281 /* ECGLTexture.h */,
+				22561F43124B873A00E7D281 /* ECGLTexture.m */,
+				22561F44124B873A00E7D281 /* ECGLTextureLink.h */,
+				22561F45124B873A00E7D281 /* ECGLTextureLink.m */,
+				22561F46124B873A00E7D281 /* ECGLVertexShader.h */,
+				22561F47124B873A00E7D281 /* ECGLVertexShader.m */,
+				22561F48124B873A00E7D281 /* ECGLView.h */,
+				22561F49124B873A00E7D281 /* ECGLView.m */,
+			);
+			name = touch;
+			path = source/touch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		22FBFE6311DD0D9400578A66 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22561F4A124B873A00E7D281 /* ECGLAttribute.h in Headers */,
+				22561F4C124B873A00E7D281 /* ECGLCommon.h in Headers */,
+				22561F4D124B873A00E7D281 /* ECGLFragmentShader.h in Headers */,
+				22561F4F124B873A00E7D281 /* ECGLLoader.h in Headers */,
+				22561F51124B873A00E7D281 /* ECGLMesh.h in Headers */,
+				22561F53124B873A00E7D281 /* ECGLShader.h in Headers */,
+				22561F55124B873A00E7D281 /* ECGLShaderProgram.h in Headers */,
+				22561F57124B873A00E7D281 /* ECGLTexture.h in Headers */,
+				22561F59124B873A00E7D281 /* ECGLTextureLink.h in Headers */,
+				22561F5B124B873A00E7D281 /* ECGLVertexShader.h in Headers */,
+				22561F5D124B873A00E7D281 /* ECGLView.h in Headers */,
+				22561F63124B874800E7D281 /* ECGLAdHocPrefix.pch in Headers */,
+				22561F64124B874800E7D281 /* ECGLDebugPrefix.pch in Headers */,
+				22561F65124B874800E7D281 /* ECGLReleasePrefix.pch in Headers */,
+				22561F66124B874800E7D281 /* ECGLSharedPrefix.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		225EC67111EBAA4800A97AEA /* ECGL SenTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECGL SenTest" */;
+			buildPhases = (
+				225EC66D11EBAA4800A97AEA /* Resources */,
+				225EC66E11EBAA4800A97AEA /* Sources */,
+				225EC66F11EBAA4800A97AEA /* Frameworks */,
+				225EC67011EBAA4800A97AEA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ECGL SenTest";
+			productName = "EC Foundation Unit Tests";
+			productReference = 225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		227333A311EBBA0800695FB4 /* ECGL GHUnit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 227333B211EBBA0800695FB4 /* Build configuration list for PBXNativeTarget "ECGL GHUnit" */;
+			buildPhases = (
+				227333A011EBBA0800695FB4 /* Resources */,
+				227333A111EBBA0800695FB4 /* Sources */,
+				227333A211EBBA0800695FB4 /* Frameworks */,
+				2255AE6811ECBF4100423A95 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ECGL GHUnit";
+			productName = "GHUnit Tests";
+			productReference = 227333A411EBBA0800695FB4 /* ECTouch GHUnit Tests.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22FBFE6611DD0D9400578A66 /* ECGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22FBFE7B11DD0E0000578A66 /* Build configuration list for PBXNativeTarget "ECGL" */;
+			buildPhases = (
+				22FBFE6311DD0D9400578A66 /* Headers */,
+				22FBFE6411DD0D9400578A66 /* Sources */,
+				22FBFE6511DD0D9400578A66 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22728B58124A28E400A9881F /* PBXTargetDependency */,
+			);
+			name = ECGL;
+			productName = "ECFoundation Touch";
+			productReference = 22FBFE6711DD0D9400578A66 /* libECGL.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECGL" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* ECFoundation */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 22728B43124A28C800A9881F /* Products */;
+					ProjectRef = 22728B42124A28C800A9881F /* ECFoundation.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				22FBFE6611DD0D9400578A66 /* ECGL */,
+				225EC67111EBAA4800A97AEA /* ECGL SenTest */,
+				227333A311EBBA0800695FB4 /* ECGL GHUnit */,
+				22FDC6C2120615F900011C6F /* Everything */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		22728B4E124A28C800A9881F /* ECFoundation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ECFoundation.framework;
+			remoteRef = 22728B4D124A28C800A9881F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22728B50124A28C800A9881F /* libECFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libECFoundation.a;
+			remoteRef = 22728B4F124A28C800A9881F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22728B52124A28C800A9881F /* EC Foundation Unit Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "EC Foundation Unit Tests.octest";
+			remoteRef = 22728B51124A28C800A9881F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22728B54124A28C800A9881F /* GHUnit Tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "GHUnit Tests.app";
+			remoteRef = 22728B53124A28C800A9881F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		225EC66D11EBAA4800A97AEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22728C0A124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig in Resources */,
+				22728C0B124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig in Resources */,
+				22728C0C124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig in Resources */,
+				22728C0D124A2C7E00A9881F /* ECIOSSharedSettings.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227333A011EBBA0800695FB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22728C0E124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig in Resources */,
+				22728C0F124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig in Resources */,
+				22728C10124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig in Resources */,
+				22728C11124A2C7E00A9881F /* ECIOSSharedSettings.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2255AE6811ECBF4100423A95 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "scripts/run-tests.sh";
+			showEnvVarsInLog = 0;
+		};
+		225EC67011EBAA4800A97AEA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		225EC66E11EBAA4800A97AEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227333A111EBBA0800695FB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				223CBAD81205C51F0008A641 /* GHUnitTestMain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22FBFE6411DD0D9400578A66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22561F4B124B873A00E7D281 /* ECGLAttribute.m in Sources */,
+				22561F4E124B873A00E7D281 /* ECGLFragmentShader.m in Sources */,
+				22561F50124B873A00E7D281 /* ECGLLoader.m in Sources */,
+				22561F52124B873A00E7D281 /* ECGLMesh.m in Sources */,
+				22561F54124B873A00E7D281 /* ECGLShader.m in Sources */,
+				22561F56124B873A00E7D281 /* ECGLShaderProgram.m in Sources */,
+				22561F58124B873A00E7D281 /* ECGLTexture.m in Sources */,
+				22561F5A124B873A00E7D281 /* ECGLTextureLink.m in Sources */,
+				22561F5C124B873A00E7D281 /* ECGLVertexShader.m in Sources */,
+				22561F5E124B873A00E7D281 /* ECGLView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22728B58124A28E400A9881F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ECFoundation Touch";
+			targetProxy = 22728B57124A28E400A9881F /* PBXContainerItemProxy */;
+		};
+		22FDC6C9120615FF00011C6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22FBFE6611DD0D9400578A66 /* ECGL */;
+			targetProxy = 22FDC6C8120615FF00011C6F /* PBXContainerItemProxy */;
+		};
+		22FDC6CB120615FF00011C6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 225EC67111EBAA4800A97AEA /* ECGL SenTest */;
+			targetProxy = 22FDC6CA120615FF00011C6F /* PBXContainerItemProxy */;
+		};
+		22FDC6CD120615FF00011C6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 227333A311EBBA0800695FB4 /* ECGL GHUnit */;
+			targetProxy = 22FDC6CC120615FF00011C6F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91B208733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22728C07124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig */;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "../ECFoundation/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include";
+			};
+			name = Debug;
+		};
+		1DEB91B308733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22728C08124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig */;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "../ECFoundation/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include";
+			};
+			name = Release;
+		};
+		225EC67411EBAA4800A97AEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
+				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "EC Foundation Unit Tests";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		225EC67511EBAA4800A97AEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
+				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "EC Foundation Unit Tests";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		227333B011EBBA0800695FB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
+				INFOPLIST_FILE = resources/tests/ECTouchGHUnit.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = "ECTouch GHUnit Tests";
+			};
+			name = Debug;
+		};
+		227333B111EBBA0800695FB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
+				INFOPLIST_FILE = resources/tests/ECTouchGHUnit.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = "ECTouch GHUnit Tests";
+			};
+			name = Release;
+		};
+		2274C8E811FF841B00E5C351 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22728C06124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig */;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "../ECFoundation/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include";
+			};
+			name = AdHoc;
+		};
+		2274C8EA11FF841B00E5C351 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DEAD_CODE_STRIPPING = NO;
+				GCC_PREFIX_HEADER = "source/prefix/ECGL$(CONFIGURATION)Prefix.pch";
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				PRODUCT_NAME = ECGL;
+				PUBLIC_HEADERS_FOLDER_PATH = include/ECGL;
+			};
+			name = AdHoc;
+		};
+		2274C8EB11FF841B00E5C351 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
+				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "EC Foundation Unit Tests";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = AdHoc;
+		};
+		2274C8EC11FF841B00E5C351 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
+				INFOPLIST_FILE = resources/tests/ECTouchGHUnit.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = "ECTouch GHUnit Tests";
+			};
+			name = AdHoc;
+		};
+		22FBFE6811DD0D9400578A66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DEAD_CODE_STRIPPING = NO;
+				GCC_PREFIX_HEADER = "source/prefix/ECGL$(CONFIGURATION)Prefix.pch";
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				PRODUCT_NAME = ECGL;
+				PUBLIC_HEADERS_FOLDER_PATH = include/ECGL;
+			};
+			name = Debug;
+		};
+		22FBFE6911DD0D9400578A66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DEAD_CODE_STRIPPING = NO;
+				GCC_PREFIX_HEADER = "source/prefix/ECGL$(CONFIGURATION)Prefix.pch";
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				PRODUCT_NAME = ECGL;
+				PUBLIC_HEADERS_FOLDER_PATH = include/ECGL;
+			};
+			name = Release;
+		};
+		22FDC6C3120615FA00011C6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Everything;
+			};
+			name = Debug;
+		};
+		22FDC6C4120615FA00011C6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Everything;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		22FDC6C5120615FA00011C6F /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Everything;
+			};
+			name = AdHoc;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91B208733DA50010E9CD /* Debug */,
+				1DEB91B308733DA50010E9CD /* Release */,
+				2274C8E811FF841B00E5C351 /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECGL SenTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225EC67411EBAA4800A97AEA /* Debug */,
+				225EC67511EBAA4800A97AEA /* Release */,
+				2274C8EB11FF841B00E5C351 /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		227333B211EBBA0800695FB4 /* Build configuration list for PBXNativeTarget "ECGL GHUnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227333B011EBBA0800695FB4 /* Debug */,
+				227333B111EBBA0800695FB4 /* Release */,
+				2274C8EC11FF841B00E5C351 /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22FBFE7B11DD0E0000578A66 /* Build configuration list for PBXNativeTarget "ECGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22FBFE6811DD0D9400578A66 /* Debug */,
+				22FBFE6911DD0D9400578A66 /* Release */,
+				2274C8EA11FF841B00E5C351 /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "Everything" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22FDC6C3120615FA00011C6F /* Debug */,
+				22FDC6C4120615FA00011C6F /* Release */,
+				22FDC6C5120615FA00011C6F /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
