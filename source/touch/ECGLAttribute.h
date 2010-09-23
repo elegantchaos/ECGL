@@ -22,8 +22,8 @@
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyDefineRN(name, NSString*);
-ECPropertyDefineAN(index, GLuint);
+ECPropertyRetained(name, NSString*);
+ECPropertyAssigned(index, GLuint);
 
 
 // --------------------------------------------------------------------------

@@ -14,6 +14,8 @@
 
 #import <ECFoundation/NSString+ECUtilities.h>
 
+ECDefineDebugChannel(LoaderChannel);
+
 @interface ECGLLoader()
 - (void) makeMesh;
 @end;
@@ -186,7 +188,7 @@ ECPropertySynthesize(defaultProgram);
 	{
 		NSUInteger indexCount = [mIndexes length] / sizeof(int);
 		const int* indexData = [mIndexes bytes];
-		NSUInteger positionCount = [data length] / sizeof(Vertex3D);
+		NSUInteger positionCount = [data length] / sizeof(Vertex3D); ECUnusedInRelease(positionCount);
 		const Vector3D* positionData = [data bytes];
 		
 		NSMutableData* vertexData = [NSMutableData dataWithCapacity: indexCount * sizeof(Vector3D)];

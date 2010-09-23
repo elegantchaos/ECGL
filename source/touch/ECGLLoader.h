@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ECProperties.h"
+#import <ECFoundation/ECProperties.h>
 
 @class ECGLMesh;
 @class ECGLShaderProgram;
@@ -25,7 +25,7 @@
 	ECGLMesh*				mResult;
 }
 
-ECPropertyDefineRN(defaultProgram, ECGLShaderProgram*);
+ECPropertyRetained(defaultProgram, ECGLShaderProgram*);
 
 - (ECGLMesh*) loadMeshFromPath: (NSString*) path;
 - (ECGLMesh*) loadMeshFromURL: (NSURL*) url;

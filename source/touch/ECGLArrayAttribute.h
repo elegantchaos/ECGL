@@ -20,13 +20,13 @@
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyDefineAN(offset, NSUInteger);
-ECPropertyDefineAN(count, NSUInteger);
-ECPropertyDefineRN(data, NSData*);
-ECPropertyDefineAN(size, GLint);
-ECPropertyDefineAN(type, GLenum);
-ECPropertyDefineAN(normalized, GLboolean);
-ECPropertyDefineAN(stride, GLsizei);
+ECPropertyAssigned(offset, NSUInteger);
+ECPropertyAssigned(count, NSUInteger);
+ECPropertyRetained(data, NSData*);
+ECPropertyAssigned(size, GLint);
+ECPropertyAssigned(type, GLenum);
+ECPropertyAssigned(normalized, GLboolean);
+ECPropertyAssigned(stride, GLsizei);
 
 // --------------------------------------------------------------------------
 // Public Methods

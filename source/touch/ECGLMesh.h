@@ -23,9 +23,9 @@
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyDefineAN(position, Vertex3D);
-ECPropertyDefineAN(orientation, Vertex3D);
-ECPropertyDefineRN(geometry, ECGLGeometry*);
+ECPropertyAssigned(position, Vertex3D);
+ECPropertyAssigned(orientation, Vertex3D);
+ECPropertyRetained(geometry, ECGLGeometry*);
 
 // --------------------------------------------------------------------------
 // Public Methods.

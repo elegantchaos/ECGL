@@ -28,11 +28,11 @@
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyDefineAN(count, NSUInteger);
-ECPropertyDefineRN(attributes, NSMutableArray*);
-ECPropertyDefineRN(textures, NSMutableArray*);
-ECPropertyDefineRN(shaders, ECGLShaderProgram*);
-ECPropertyDefineAN(cullFace, BOOL);
+ECPropertyAssigned(count, NSUInteger);
+ECPropertyRetained(attributes, NSMutableArray*);
+ECPropertyRetained(textures, NSMutableArray*);
+ECPropertyRetained(shaders, ECGLShaderProgram*);
+ECPropertyAssigned(cullFace, BOOL);
 
 // --------------------------------------------------------------------------
 // Public Methods.
