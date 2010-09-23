@@ -97,6 +97,9 @@
 
 - (BOOL)createFramebuffer 
 {
+    CGRect frame = self.frame;
+	frame = frame;
+	
     glGenFramebuffersOES(1, &viewFramebuffer);
     glGenRenderbuffersOES(1, &viewRenderbuffer);
     
@@ -190,5 +193,11 @@
     [context release];  
     [super dealloc];
 }
+
+- (void) setPerspectiveProjectionWithFieldOfView: (GLfloat) fieldOfVision nearPlane: (GLfloat) near farPlane: (GLfloat) far aspectRatio: (GLfloat) aspect
+{
+	Matrix3DSetPerspectiveProjectionWithFieldOfView(mProjection, fieldOfVision, near, far, aspect);
+}
+
 
 @end

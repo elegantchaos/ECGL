@@ -9,31 +9,43 @@
 
 #import "ECGLCommon.h"
 
-@class ECGLGeometry;
+@class ECGLShaderProgram;
+@class ECGLTexture;
+@class ECGLAttribute;
 
 // --------------------------------------------------------------------------
 //! A collection of geometry which can be drawn.
 // --------------------------------------------------------------------------
 
-@interface ECGLMesh : NSObject 
+@interface ECGLGeometry : NSObject 
 {
+	Matrix3D		mTransform;
+	GLint			mMVP;
+	NSMutableArray*	mGeometry;
 }
 
 // --------------------------------------------------------------------------
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyDefineAN(position, Vertex3D);
-ECPropertyDefineAN(orientation, Vertex3D);
-ECPropertyDefineRN(geometry, ECGLGeometry*);
+ECPropertyDefineAN(count, NSUInteger);
+ECPropertyDefineRN(attributes, NSMutableArray*);
+ECPropertyDefineRN(textures, NSMutableArray*);
+ECPropertyDefineRN(shaders, ECGLShaderProgram*);
+ECPropertyDefineAN(cullFace, BOOL);
 
 // --------------------------------------------------------------------------
 // Public Methods.
 // --------------------------------------------------------------------------
 
-- (void)		updateTransform;
+- (void)		updateTransformForPosition: (Vector3D) position orientation: (Vector3D) orientation;
+- (GLfloat*)	transform;
 - (void)		resolveIndexes;
-- (void)		drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection  wireframe: (BOOL) wireframe;
+- (void)		drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection;
+- (void)		drawWireframeWithCamera: (GLfloat*) camera projection: (GLfloat*) projection;
+
+- (void)		addTexture: (ECGLTexture*) texture;
+- (void)		addAttribute: (ECGLAttribute*) attribute;
 - (void)		addGeometry:(ECGLGeometry *) geometry;
 
 @end

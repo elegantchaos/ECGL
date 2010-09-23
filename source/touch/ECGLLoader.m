@@ -8,12 +8,26 @@
 
 #import "ECGLLoader.h"
 #import "ECGLMesh.h"
+#import "ECGLGeometry.h"
+#import "ECGLArrayAttribute.h"
+#import "ECGLShaderProgram.h"
 
 #import <ECFoundation/NSString+ECUtilities.h>
 
+@interface ECGLLoader()
+- (void) makeMesh;
+@end;
+
 @implementation ECGLLoader
 
-ECDefineDebugChannel(LoaderChannel);
+ECPropertySynthesize(defaultProgram);
+
+- (void) dealloc
+{
+	ECPropertyDealloc(defaultProgram);
+
+	[super dealloc];
+}
 
 - (ECGLMesh*) loadMeshFromResourceNamed:(NSString *)name
 {
@@ -43,8 +57,6 @@ ECDefineDebugChannel(LoaderChannel);
 
 - (ECGLMesh*) loadMeshFromURL: (NSURL*) url
 {
-	ECGLMesh* mesh = nil;
-	
 	mParser = [[NSXMLParser alloc] initWithContentsOfURL: url];
 	mParser.delegate = self;
 	
@@ -55,8 +67,11 @@ ECDefineDebugChannel(LoaderChannel);
 	
 	[mParser release];
 	mParser = nil;
+
+	ECGLMesh* mesh = mResult;
+	mResult = nil;
 	
-	return mesh;
+	return [mesh autorelease];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict 
@@ -77,7 +92,7 @@ ECDefineDebugChannel(LoaderChannel);
 	else if([elementName isEqualToString:@"source"]) 
 	{
 		ECAssertNil(mSourceID);
-		mSourceID = [attributeDict valueForKey:@"id"];
+		mSourceID = [NSString stringWithFormat: @"#%@", [attributeDict valueForKey:@"id"]];
 	}
 
 	else if ([elementName isEqualToString:@"float_array"]) 
@@ -145,6 +160,7 @@ ECDefineDebugChannel(LoaderChannel);
 
 	else if ([elementName isEqualToString: @"mesh"])
 	{
+		[self makeMesh];
 	}
 	
 	if (mContent)
@@ -163,5 +179,53 @@ ECDefineDebugChannel(LoaderChannel);
 	}
 }
 
+- (void) makeMesh
+{
+	NSData* data = [mSources objectForKey: mPositionsID];
+	if (data && mIndexes)
+	{
+		NSUInteger indexCount = [mIndexes length] / sizeof(int);
+		const int* indexData = [mIndexes bytes];
+		NSUInteger positionCount = [data length] / sizeof(Vertex3D);
+		const Vector3D* positionData = [data bytes];
+		
+		NSMutableData* vertexData = [NSMutableData dataWithCapacity: indexCount * sizeof(Vector3D)];
+		Vector3D* vertices = [vertexData mutableBytes];
+		for (NSUInteger n = 0; n < indexCount; ++n)
+		{
+			NSUInteger index = indexData[n];
+			ECAssert(index < positionCount);
+			vertices[n] = positionData[index];
+		}
+		
+		ECGLArrayAttribute* attribute = [[ECGLArrayAttribute alloc] init];
+		attribute.data = vertexData;
+		attribute.count = indexCount;
+		attribute.name = @"position";
+		attribute.size = 3;
+		attribute.type = GL_FLOAT;
+		attribute.normalized = NO;
+		attribute.stride = 0;
+
+		ECGLGeometry* geometry = [[ECGLGeometry alloc] init];
+		geometry.count = indexCount;
+		geometry.shaders = self.defaultProgram;
+		[geometry.attributes addObject: attribute];
+
+		mResult = [[ECGLMesh alloc] init];
+		[mResult addGeometry: geometry];
+		
+		[attribute release];
+		[geometry release];
+	}
+	
+	[mIndexes release];
+	mIndexes = nil;
+	[mSources release];
+	mSources = nil;
+	mPositionsID = nil;
+	mNormalsID = nil;
+	
+}
 
 @end

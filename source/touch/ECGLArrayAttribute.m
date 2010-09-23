@@ -5,33 +5,34 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECGLAttribute.h"
-#import "ECGLShaderProgram.h"
+#import "ECGLArrayAttribute.h"
 
-@implementation ECGLAttribute
+
+@implementation ECGLArrayAttribute
 
 // --------------------------------------------------------------------------
 //! Properties.
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(name);
-ECPropertySynthesize(index);
+ECPropertySynthesize(offset);
+ECPropertySynthesize(count);
+ECPropertySynthesize(data);
+ECPropertySynthesize(size);
+ECPropertySynthesize(type);
+ECPropertySynthesize(normalized);
+ECPropertySynthesize(stride);
 
 - (void) dealloc
 {
-	ECPropertyDealloc(name);
-	
-	[super dealloc];
-}
+	ECPropertyDealloc(data);
 
-- (void) resolveIndexForProgram: (ECGLShaderProgram*) program
-{
-	self.index = [program locationForAttribute: self.name];
+	[super dealloc];
 }
 
 - (void) use
 {
-	ECAssertShouldntBeHere();
+	glVertexAttribPointer(self.index, self.size, self.type, self.normalized, self.stride, [self.data bytes]);
+	glEnableVertexAttribArray(self.index);
 }
 
 @end

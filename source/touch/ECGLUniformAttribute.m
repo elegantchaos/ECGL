@@ -5,33 +5,25 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECGLAttribute.h"
+#import "ECGLUniformAttribute.h"
 #import "ECGLShaderProgram.h"
 
-@implementation ECGLAttribute
+@implementation ECGLUniformAttribute
 
 // --------------------------------------------------------------------------
 //! Properties.
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(name);
-ECPropertySynthesize(index);
-
 - (void) dealloc
 {
-	ECPropertyDealloc(name);
 	
 	[super dealloc];
 }
 
 - (void) resolveIndexForProgram: (ECGLShaderProgram*) program
 {
-	self.index = [program locationForAttribute: self.name];
+	self.index = [program locationForUniform: self.name];
 }
 
-- (void) use
-{
-	ECAssertShouldntBeHere();
-}
 
 @end

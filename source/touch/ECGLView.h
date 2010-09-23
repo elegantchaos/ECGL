@@ -16,6 +16,8 @@ Note that setting the view non-opaque will only work if the EAGL surface has an 
 
 @interface ECGLView : UIView 
 {
+@protected
+	Matrix3D	mProjection;
     
 @private
     /* The pixel dimensions of the backbuffer */
@@ -31,11 +33,14 @@ Note that setting the view non-opaque will only work if the EAGL surface has an 
     NSTimeInterval animationInterval;
 }
 
+
 @property NSTimeInterval animationInterval;
 
 - (void)	startAnimation;
 - (void)	stopAnimation;
 - (void)	drawView;
 - (void)	drawContent;
+
+- (void)	setPerspectiveProjectionWithFieldOfView: (GLfloat) fieldOfVision nearPlane: (GLfloat) near farPlane: (GLfloat) far aspectRatio: (GLfloat) aspect;
 
 @end

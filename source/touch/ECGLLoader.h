@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ECFoundation/ECProperties.h>
+#import "ECProperties.h"
 
 @class ECGLMesh;
+@class ECGLShaderProgram;
 
-@interface ECGLLoader : NSObject // <NSXMLParserDelegate>
+@interface ECGLLoader : NSObject
 {
 	NSXMLParser*			mParser;
 	NSMutableString*		mContent;
@@ -21,7 +22,10 @@
 	NSString*				mPositionsID;
 	NSString*				mNormalsID;
 	NSMutableDictionary*	mSources;
+	ECGLMesh*				mResult;
 }
+
+ECPropertyDefineRN(defaultProgram, ECGLShaderProgram*);
 
 - (ECGLMesh*) loadMeshFromPath: (NSString*) path;
 - (ECGLMesh*) loadMeshFromURL: (NSURL*) url;

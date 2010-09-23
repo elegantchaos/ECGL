@@ -5,33 +5,32 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECGLAttribute.h"
+#import "ECGLUniformColourAttribute.h"
 #import "ECGLShaderProgram.h"
 
-@implementation ECGLAttribute
+@implementation ECGLUniformColourAttribute
 
 // --------------------------------------------------------------------------
 //! Properties.
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(name);
-ECPropertySynthesize(index);
+ECPropertySynthesize(colour);
 
 - (void) dealloc
 {
-	ECPropertyDealloc(name);
 	
 	[super dealloc];
 }
 
-- (void) resolveIndexForProgram: (ECGLShaderProgram*) program
+- (void) resolveIndexForShader: (ECGLShaderProgram*) shader
 {
-	self.index = [program locationForAttribute: self.name];
+	self.index = [shader locationForUniform: self.name];
 }
 
 - (void) use
 {
-	ECAssertShouldntBeHere();
+	Color c = self.colour;
+	glUniform4fv(self.index, GL_FLOAT, (GLfloat*) &c); 
 }
 
 @end

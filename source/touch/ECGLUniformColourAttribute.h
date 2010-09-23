@@ -5,32 +5,24 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECGLCommon.h"
-
-@class ECGLShaderProgram;
+#import "ECGLUniformAttribute.h"
 
 // --------------------------------------------------------------------------
 //! A high level abstraction of some 3d attributes - for example
 //! an array of vertices or texture coordinates.
 // --------------------------------------------------------------------------
 
-@interface ECGLAttribute : NSObject 
+@interface ECGLUniformColourAttribute : ECGLUniformAttribute 
 {
 }
+
+ECPropertyDefineAN(colour, Color);
 
 // --------------------------------------------------------------------------
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyDefineRN(name, NSString*);
-ECPropertyDefineAN(index, GLuint);
-
-
-// --------------------------------------------------------------------------
-// Public Methods
-// --------------------------------------------------------------------------
-
+- (void) resolveIndexForShader: (ECGLShaderProgram*) shader;
 - (void) use;
-- (void) resolveIndexForProgram: (ECGLShaderProgram*) program;
 
 @end
