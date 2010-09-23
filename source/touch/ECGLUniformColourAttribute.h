@@ -16,7 +16,7 @@
 {
 }
 
-ECPropertyDefineAN(colour, Color);
+ECPropertyAssigned(colour, Color);
 
 // --------------------------------------------------------------------------
 // Public Properties.

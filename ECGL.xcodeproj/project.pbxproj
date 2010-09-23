@@ -49,6 +49,14 @@
 		22561F64124B874800E7D281 /* ECGLDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22561F60124B874800E7D281 /* ECGLDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22561F65124B874800E7D281 /* ECGLReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22561F61124B874800E7D281 /* ECGLReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22561F66124B874800E7D281 /* ECGLSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22561F62124B874800E7D281 /* ECGLSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		225620FB124B939B00E7D281 /* ECGLArrayAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 225620F5124B939B00E7D281 /* ECGLArrayAttribute.m */; };
+		225620FC124B939B00E7D281 /* ECGLGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 225620F6124B939B00E7D281 /* ECGLGeometry.m */; };
+		225620FD124B939B00E7D281 /* ECGLUniformAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 225620F7124B939B00E7D281 /* ECGLUniformAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		225620FE124B939B00E7D281 /* ECGLUniformAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 225620F8124B939B00E7D281 /* ECGLUniformAttribute.m */; };
+		225620FF124B939B00E7D281 /* ECGLUniformColourAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 225620F9124B939B00E7D281 /* ECGLUniformColourAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22562100124B939B00E7D281 /* ECGLUniformColourAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 225620FA124B939B00E7D281 /* ECGLUniformColourAttribute.m */; };
+		22562123124B93F100E7D281 /* ECGLGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 22562122124B93F100E7D281 /* ECGLGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2256212B124B940B00E7D281 /* ECGLArrayAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256212A124B940B00E7D281 /* ECGLArrayAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728C0A124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C06124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig */; };
 		22728C0B124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C07124A2C7E00A9881F /* ECIOSDebugSettings.xcconfig */; };
 		22728C0C124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22728C08124A2C7E00A9881F /* ECIOSReleaseSettings.xcconfig */; };
@@ -149,6 +157,14 @@
 		22561F60124B874800E7D281 /* ECGLDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLDebugPrefix.pch; sourceTree = "<group>"; };
 		22561F61124B874800E7D281 /* ECGLReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLReleasePrefix.pch; sourceTree = "<group>"; };
 		22561F62124B874800E7D281 /* ECGLSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLSharedPrefix.pch; sourceTree = "<group>"; };
+		225620F5124B939B00E7D281 /* ECGLArrayAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLArrayAttribute.m; sourceTree = "<group>"; };
+		225620F6124B939B00E7D281 /* ECGLGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLGeometry.m; sourceTree = "<group>"; };
+		225620F7124B939B00E7D281 /* ECGLUniformAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLUniformAttribute.h; sourceTree = "<group>"; };
+		225620F8124B939B00E7D281 /* ECGLUniformAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLUniformAttribute.m; sourceTree = "<group>"; };
+		225620F9124B939B00E7D281 /* ECGLUniformColourAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLUniformColourAttribute.h; sourceTree = "<group>"; };
+		225620FA124B939B00E7D281 /* ECGLUniformColourAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLUniformColourAttribute.m; sourceTree = "<group>"; };
+		22562122124B93F100E7D281 /* ECGLGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLGeometry.h; sourceTree = "<group>"; };
+		2256212A124B940B00E7D281 /* ECGLArrayAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLArrayAttribute.h; sourceTree = "<group>"; };
 		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22728B42124A28C800A9881F /* ECFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ECFoundation.xcodeproj; path = ../ECFoundation/ECFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		22728C06124A2C7E00A9881F /* ECIOSAdHocSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSAdHocSettings.xcconfig; sourceTree = "<group>"; };
@@ -269,7 +285,7 @@
 		22728B43124A28C800A9881F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22728B4E124A28C800A9881F /* ECFoundation.framework */,
+				22728B4E124A28C800A9881F /* ECFoundation */,
 				22728B50124A28C800A9881F /* libECFoundation.a */,
 				22728B52124A28C800A9881F /* EC Foundation Unit Tests.octest */,
 				22728B54124A28C800A9881F /* GHUnit Tests.app */,
@@ -322,11 +338,15 @@
 		2286307311E32AA800654739 /* touch */ = {
 			isa = PBXGroup;
 			children = (
+				2256212A124B940B00E7D281 /* ECGLArrayAttribute.h */,
+				225620F5124B939B00E7D281 /* ECGLArrayAttribute.m */,
 				22561F35124B873A00E7D281 /* ECGLAttribute.h */,
 				22561F36124B873A00E7D281 /* ECGLAttribute.m */,
 				22561F37124B873A00E7D281 /* ECGLCommon.h */,
 				22561F38124B873A00E7D281 /* ECGLFragmentShader.h */,
 				22561F39124B873A00E7D281 /* ECGLFragmentShader.m */,
+				22562122124B93F100E7D281 /* ECGLGeometry.h */,
+				225620F6124B939B00E7D281 /* ECGLGeometry.m */,
 				22561F3A124B873A00E7D281 /* ECGLLoader.h */,
 				22561F3B124B873A00E7D281 /* ECGLLoader.m */,
 				22561F3C124B873A00E7D281 /* ECGLMesh.h */,
@@ -339,6 +359,10 @@
 				22561F43124B873A00E7D281 /* ECGLTexture.m */,
 				22561F44124B873A00E7D281 /* ECGLTextureLink.h */,
 				22561F45124B873A00E7D281 /* ECGLTextureLink.m */,
+				225620F7124B939B00E7D281 /* ECGLUniformAttribute.h */,
+				225620F8124B939B00E7D281 /* ECGLUniformAttribute.m */,
+				225620F9124B939B00E7D281 /* ECGLUniformColourAttribute.h */,
+				225620FA124B939B00E7D281 /* ECGLUniformColourAttribute.m */,
 				22561F46124B873A00E7D281 /* ECGLVertexShader.h */,
 				22561F47124B873A00E7D281 /* ECGLVertexShader.m */,
 				22561F48124B873A00E7D281 /* ECGLView.h */,
@@ -370,6 +394,10 @@
 				22561F64124B874800E7D281 /* ECGLDebugPrefix.pch in Headers */,
 				22561F65124B874800E7D281 /* ECGLReleasePrefix.pch in Headers */,
 				22561F66124B874800E7D281 /* ECGLSharedPrefix.pch in Headers */,
+				225620FD124B939B00E7D281 /* ECGLUniformAttribute.h in Headers */,
+				225620FF124B939B00E7D281 /* ECGLUniformColourAttribute.h in Headers */,
+				22562123124B93F100E7D281 /* ECGLGeometry.h in Headers */,
+				2256212B124B940B00E7D281 /* ECGLArrayAttribute.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,10 +494,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		22728B4E124A28C800A9881F /* ECFoundation.framework */ = {
+		22728B4E124A28C800A9881F /* ECFoundation */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = ECFoundation.framework;
+			path = ECFoundation;
 			remoteRef = 22728B4D124A28C800A9881F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -582,6 +610,10 @@
 				22561F5A124B873A00E7D281 /* ECGLTextureLink.m in Sources */,
 				22561F5C124B873A00E7D281 /* ECGLVertexShader.m in Sources */,
 				22561F5E124B873A00E7D281 /* ECGLView.m in Sources */,
+				225620FB124B939B00E7D281 /* ECGLArrayAttribute.m in Sources */,
+				225620FC124B939B00E7D281 /* ECGLGeometry.m in Sources */,
+				225620FE124B939B00E7D281 /* ECGLUniformAttribute.m in Sources */,
+				22562100124B939B00E7D281 /* ECGLUniformColourAttribute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
