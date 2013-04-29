@@ -10,17 +10,6 @@
 
 @implementation ECGLMesh
 
-ECPropertySynthesize(geometry);
-ECPropertySynthesize(position);
-ECPropertySynthesize(orientation);
-
-- (void) dealloc
-{
-	ECPropertyDealloc(geometry);
-	
-	[super dealloc];
-}
-
 - (void) updateTransform
 {
 	[self.geometry updateTransformForPosition: self.position orientation: self.orientation];
@@ -31,7 +20,7 @@ ECPropertySynthesize(orientation);
 	[self.geometry resolveIndexes];
 }
 
-- (void) drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection  wireframe: (BOOL) wireframe;
+- (void) drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection  wireframe: (BOOL) wireframe
 {
 	
 	if (wireframe)

@@ -8,8 +8,7 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#include <OpenGLES/ES2/gl.h>
-
+#if 0
 #define DEGREES_TO_RADIANS(x) ((x) / 180.0 * M_PI)
 #define RADIANS_TO_DEGREES(x) ((x) / M_PI * 180.0)
 
@@ -20,7 +19,7 @@ typedef struct
     GLfloat z;
 } Vertex3D;
 
-typedef Vertex3D Vector3D;
+typedef Vertex3D GLKVector3;
 
 static inline GLfloat Vertex3DDistanceBetweenVertices 
     (Vertex3D vertex1, Vertex3D vertex2)
@@ -35,31 +34,31 @@ static inline GLfloat Vertex3DDistanceBetweenVertices
                  (deltaY * deltaY) + 
                  (deltaZ * deltaZ));
 }
-static inline GLfloat Vector3DMagnitude(Vector3D vector)
+static inline GLfloat GLKVector3Magnitude(GLKVector3 vector)
 {
     return sqrtf((vector.x * vector.x) + 
                  (vector.y * vector.y) + 
                  (vector.z * vector.z)); 
 }
-static inline GLfloat Vector3DDotProduct
-(Vector3D vector1, Vector3D vector2)
+static inline GLfloat GLKVector3DotProduct
+(GLKVector3 vector1, GLKVector3 vector2)
 {		
     return (vector1.x*vector2.x) + 
     (vector1.y*vector2.y) + 
     (vector1.z*vector2.z);
 }
-static inline Vector3D Vector3DCrossProduct
-    (Vector3D vector1, Vector3D vector2)
+static inline GLKVector3 GLKVector3CrossProduct
+    (GLKVector3 vector1, GLKVector3 vector2)
 {
-    Vector3D ret;
+    GLKVector3 ret;
     ret.x = (vector1.y * vector2.z) - (vector1.z * vector2.y);
     ret.y = (vector1.z * vector2.x) - (vector1.x * vector2.z);
     ret.z = (vector1.x * vector2.y) - (vector1.y * vector2.x);
     return ret;
 }
-static inline void Vector3DNormalize(Vector3D *vector)
+static inline void GLKVector3Normalize(GLKVector3 *vector)
 {
-    GLfloat vecMag = Vector3DMagnitude(*vector);
+    GLfloat vecMag = GLKVector3Magnitude(*vector);
     if ( vecMag == 0.0 )
     {
         vector->x = 1.0;
@@ -71,23 +70,23 @@ static inline void Vector3DNormalize(Vector3D *vector)
     vector->y /= vecMag;
     vector->z /= vecMag;
 }
-static inline Vector3D Vector3DMakeWithStartAndEndPoints
+static inline GLKVector3 GLKVector3MakeWithStartAndEndPoints
 (Vertex3D start, Vertex3D end)
 {
-    Vector3D ret;
+    GLKVector3 ret;
     ret.x = end.x - start.x;
     ret.y = end.y - start.y;
     ret.z = end.z - start.z;
     return ret;
 }
-static inline Vector3D Vector3DMakeNormalizedVectorWithStartAndEndPoints
+static inline GLKVector3 GLKVector3MakeNormalizedVectorWithStartAndEndPoints
 (Vertex3D start, Vertex3D end)
 {
-    Vector3D ret = Vector3DMakeWithStartAndEndPoints(start, end);
-    Vector3DNormalize(&ret);
+    GLKVector3 ret = GLKVector3MakeWithStartAndEndPoints(start, end);
+    GLKVector3Normalize(&ret);
     return ret;
 } 
-static inline void Vector3DFlip (Vector3D *vector)
+static inline void GLKVector3Flip (GLKVector3 *vector)
 {
     vector->x = -vector->x;
     vector->y = -vector->y;
@@ -187,7 +186,7 @@ static inline void Matrix3DSetYRotationUsingDegrees
     Matrix3DSetYRotationUsingRadians(matrix, DEGREES_TO_RADIANS(degrees));
 }
 static inline void Matrix3DSetRotationByRadians
-(Matrix3D matrix, GLfloat radians, Vector3D vector)
+(Matrix3D matrix, GLfloat radians, GLKVector3 vector)
 {
     GLfloat mag = sqrtf((vector.x * vector.x) + 
                         (vector.y * vector.y) + 
@@ -222,7 +221,7 @@ static inline void Matrix3DSetRotationByRadians
     matrix[10] = (vector.z * vector.z) * (1 - c) + c;
 }
 static inline void Matrix3DSetRotationByDegrees
-    (Matrix3D matrix, GLfloat degrees, Vector3D vec)
+    (Matrix3D matrix, GLfloat degrees, GLKVector3 vec)
 {
     Matrix3DSetRotationByRadians(matrix, DEGREES_TO_RADIANS(degrees), vec);
 }
@@ -312,3 +311,5 @@ typedef struct
     GLfloat	s;
     GLfloat t;
 } TextureCoord;
+
+#endif

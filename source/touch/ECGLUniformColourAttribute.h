@@ -13,10 +13,8 @@
 // --------------------------------------------------------------------------
 
 @interface ECGLUniformColourAttribute : ECGLUniformAttribute 
-{
-}
 
-ECPropertyAssigned(colour, Color);
+@property (assign, nonatomic) Color colour;
 
 // --------------------------------------------------------------------------
 // Public Properties.

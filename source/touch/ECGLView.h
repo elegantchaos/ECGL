@@ -5,7 +5,7 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECGLCommon.h"
+#import "GLKVector3.h"
 #import <OpenGLES/EAGL.h>
 
 /*

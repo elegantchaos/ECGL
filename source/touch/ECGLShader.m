@@ -7,8 +7,6 @@
 
 #import "ECGLShader.h"
 
-#include <OpenGLES/ES2/gl.h>
-
 @interface ECGLShader()
 - (void) makeShader;
 - (void) disposeShader;
@@ -50,7 +48,6 @@
 - (void) dealloc
 {
 	[self disposeShader];
-	[super dealloc];
 }
 
 - (int) compileFromResourceNamed: (NSString*) name

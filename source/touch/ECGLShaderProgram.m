@@ -9,8 +9,6 @@
 #import "ECGLVertexShader.h"
 #import "ECGLFragmentShader.h"
 
-#include <OpenGLES/ES2/gl.h>
-
 @interface ECGLShaderProgram()
 - (void) makeProgram;
 - (void) disposeProgram;
@@ -31,10 +29,7 @@
 	[fs compileFromResourceNamed: name];
 
 	self = [self initWithVertexShader: vs fragmentShader:fs];
-	
-	[vs release];
-	[fs release];
-	
+
 	return self;
 }
 
@@ -51,14 +46,6 @@
 	}
 	
 	return self;
-}
-
-- (void) dealloc
-{
-	[self releaseShaders];
-	[self disposeProgram];
-	
-	[super dealloc];
 }
 
 - (void) releaseShaders

@@ -14,14 +14,6 @@
 //! Properties.
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(colour);
-
-- (void) dealloc
-{
-	
-	[super dealloc];
-}
-
 - (void) resolveIndexForShader: (ECGLShaderProgram*) shader
 {
 	self.index = [shader locationForUniform: self.name];

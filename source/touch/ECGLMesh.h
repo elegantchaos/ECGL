@@ -7,8 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ECGLCommon.h"
-
 @class ECGLGeometry;
 
 // --------------------------------------------------------------------------
@@ -23,9 +21,9 @@
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyAssigned(position, Vertex3D);
-ECPropertyAssigned(orientation, Vertex3D);
-ECPropertyRetained(geometry, ECGLGeometry*);
+@property (assign, nonatomic) GLKVector3 position;
+@property (assign, nonatomic) GLKVector3 orientation;
+@property (strong, nonatomic) ECGLGeometry* geometry;
 
 // --------------------------------------------------------------------------
 // Public Methods.

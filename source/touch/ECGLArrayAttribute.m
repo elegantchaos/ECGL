@@ -14,21 +14,6 @@
 //! Properties.
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(offset);
-ECPropertySynthesize(count);
-ECPropertySynthesize(data);
-ECPropertySynthesize(size);
-ECPropertySynthesize(type);
-ECPropertySynthesize(normalized);
-ECPropertySynthesize(stride);
-
-- (void) dealloc
-{
-	ECPropertyDealloc(data);
-
-	[super dealloc];
-}
-
 - (void) use
 {
 	glVertexAttribPointer(self.index, self.size, self.type, self.normalized, self.stride, [self.data bytes]);

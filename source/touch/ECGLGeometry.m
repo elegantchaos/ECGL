@@ -18,38 +18,20 @@
 
 @implementation ECGLGeometry
 
-ECPropertySynthesize(attributes);
-ECPropertySynthesize(shaders);
-ECPropertySynthesize(count);
-ECPropertySynthesize(textures);
-ECPropertySynthesize(cullFace);
-
 - (id) init
 {
 	if ((self = [super init]) != nil)
 	{
 		NSMutableArray* atts = [[NSMutableArray alloc] init];
 		self.attributes = atts;
-		[atts release];
-		
+
 		NSMutableArray* tex = [[NSMutableArray alloc] init];
 		self.textures = tex;
-		[tex release];
-		
+
 		self.cullFace = YES;
 	}
 	
 	return self;
-}
-
-- (void) dealloc
-{
-	[mGeometry release];
-	ECPropertyDealloc(attributes);
-	ECPropertyDealloc(shaders);
-	ECPropertyDealloc(textures);
-	
-	[super dealloc];
 }
 
 - (void) addTexture:(ECGLTexture *)texture
@@ -57,14 +39,13 @@ ECPropertySynthesize(cullFace);
 	ECGLTextureLink* link = [[ECGLTextureLink alloc] init];
 	link.texture = texture;
 	[self.textures addObject: link];
-	[link release];
 }
 
-- (void) updateTransformForPosition: (Vector3D) position orientation: (Vector3D) orientation
+- (void) updateTransformForPosition: (GLKVector3) position orientation: (GLKVector3) orientation
 {
-    static const Vector3D rotateX = {1.f, 0.f, 0.f};
-    static const Vector3D rotateY = {0.f, 1.f, 0.f};
-    static const Vector3D rotateZ = {0.f, 0.f, 1.f};
+    static const GLKVector3 rotateX = {1.f, 0.f, 0.f};
+    static const GLKVector3 rotateY = {0.f, 1.f, 0.f};
+    static const GLKVector3 rotateZ = {0.f, 0.f, 1.f};
 	
 	Matrix3D rotationXMatrix;
     Matrix3DSetRotationByDegrees(rotationXMatrix, orientation.x, rotateX);
@@ -116,7 +97,7 @@ ECPropertySynthesize(cullFace);
 	NSUInteger textureNumber = 0;
 	for (ECGLTextureLink* texture in self.textures)
 	{
-		texture.index = [self.shaders locationForUniform: [NSString stringWithFormat: @"texture%d", textureNumber++]];
+		texture.index = [self.shaders locationForUniform: [NSString stringWithFormat: @"texture%ld", textureNumber++]];
 	}
 
 	for (ECGLGeometry* sub in mGeometry)
@@ -141,13 +122,13 @@ ECPropertySynthesize(cullFace);
 		glEnable(GL_TEXTURE_2D);
 		for (ECGLTextureLink* texture in self.textures)
 		{
-			glActiveTexture(GL_TEXTURE0 + textureIndex++);
+			glActiveTexture((GLenum) (GL_TEXTURE0 + textureIndex++));
 			[texture.texture use];
-			glUniform1f(texture.index, 0);		
+			glUniform1f((GLint) texture.index, 0);
 		}
 		for (; textureIndex < 4; ++textureIndex)
 		{
-			glActiveTexture(GL_TEXTURE0 + textureIndex);
+			glActiveTexture((GLenum) (GL_TEXTURE0 + textureIndex));
 			glBindTexture(GL_TEXTURE_2D, 0);
 		}
 	}
@@ -166,7 +147,7 @@ ECPropertySynthesize(cullFace);
 	}
 }
 
-- (void) drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection;
+- (void) drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection
 {
 	[self use];
 
@@ -177,7 +158,7 @@ ECPropertySynthesize(cullFace);
 	Matrix3DMultiply(projection, modelView, modelViewProjection);		
 
 	glUniformMatrix4fv(mMVP, 1, GL_FALSE, modelViewProjection);
-	glDrawArrays(GL_TRIANGLES, 0, self.count);
+	glDrawArrays(GL_TRIANGLES, 0, (GLsizei) self.count);
 	
 	for (ECGLGeometry* sub in mGeometry)
 	{
@@ -185,7 +166,7 @@ ECPropertySynthesize(cullFace);
 	}
 }
 
-- (void) drawWireframeWithCamera: (GLfloat*) camera projection: (GLfloat*) projection;
+- (void) drawWireframeWithCamera: (GLfloat*) camera projection: (GLfloat*) projection
 {
 	[self use];
 
@@ -198,7 +179,7 @@ ECPropertySynthesize(cullFace);
 	glUniformMatrix4fv(mMVP, 1, GL_FALSE, modelViewProjection);
 	
 	for(NSUInteger i = 0; i < self.count; i += 3)
-		glDrawArrays(GL_LINE_LOOP, i, 3);
+		glDrawArrays(GL_LINE_LOOP, (GLint)i, 3);
 	
 	for (ECGLGeometry* sub in mGeometry)
 	{

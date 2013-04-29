@@ -20,13 +20,13 @@
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyAssigned(offset, NSUInteger);
-ECPropertyAssigned(count, NSUInteger);
-ECPropertyRetained(data, NSData*);
-ECPropertyAssigned(size, GLint);
-ECPropertyAssigned(type, GLenum);
-ECPropertyAssigned(normalized, GLboolean);
-ECPropertyAssigned(stride, GLsizei);
+@property (assign, nonatomic) NSUInteger offset;
+@property (assign, nonatomic) NSUInteger count;
+@property (strong, nonatomic) NSData* data;
+@property (assign, nonatomic) GLint size;
+@property (assign, nonatomic) GLenum type;
+@property (assign, nonatomic) GLboolean normalized;
+@property (assign, nonatomic) GLsizei stride;
 
 // --------------------------------------------------------------------------
 // Public Methods

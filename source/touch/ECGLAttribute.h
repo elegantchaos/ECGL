@@ -5,7 +5,7 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECGLCommon.h"
+//#import "ECGLCommon.h"
 
 @class ECGLShaderProgram;
 
@@ -22,8 +22,8 @@
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(name, NSString*);
-ECPropertyAssigned(index, GLuint);
+@property (strong, nonatomic) NSString* name;
+@property (assign, nonatomic) GLuint index;
 
 
 // --------------------------------------------------------------------------

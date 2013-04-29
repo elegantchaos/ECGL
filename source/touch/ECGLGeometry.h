@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ECGLCommon.h"
+//#import "ECGLCommon.h"
 
 @class ECGLShaderProgram;
 @class ECGLTexture;
@@ -19,7 +19,7 @@
 
 @interface ECGLGeometry : NSObject 
 {
-	Matrix3D		mTransform;
+	GLKMatrix4		mTransform;
 	GLint			mMVP;
 	NSMutableArray*	mGeometry;
 }
@@ -28,17 +28,17 @@
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyAssigned(count, NSUInteger);
-ECPropertyRetained(attributes, NSMutableArray*);
-ECPropertyRetained(textures, NSMutableArray*);
-ECPropertyRetained(shaders, ECGLShaderProgram*);
-ECPropertyAssigned(cullFace, BOOL);
+@property (assign, nonatomic) NSUInteger count;
+@property (strong, nonatomic) NSMutableArray* attributes;
+@property (strong, nonatomic) NSMutableArray* textures;
+@property (strong, nonatomic) ECGLShaderProgram* shaders;
+@property (assign, nonatomic) BOOL cullFace;
 
 // --------------------------------------------------------------------------
 // Public Methods.
 // --------------------------------------------------------------------------
 
-- (void)		updateTransformForPosition: (Vector3D) position orientation: (Vector3D) orientation;
+- (void)		updateTransformForPosition: (GLKVector3) position orientation: (GLKVector3) orientation;
 - (GLfloat*)	transform;
 - (void)		resolveIndexes;
 - (void)		drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection;

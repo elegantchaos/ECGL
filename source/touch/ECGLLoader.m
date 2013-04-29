@@ -189,10 +189,10 @@ ECPropertySynthesize(defaultProgram);
 		NSUInteger indexCount = [mIndexes length] / sizeof(int);
 		const int* indexData = [mIndexes bytes];
 		NSUInteger positionCount = [data length] / sizeof(Vertex3D); ECUnusedInRelease(positionCount);
-		const Vector3D* positionData = [data bytes];
+		const GLKVector3* positionData = [data bytes];
 		
-		NSMutableData* vertexData = [NSMutableData dataWithCapacity: indexCount * sizeof(Vector3D)];
-		Vector3D* vertices = [vertexData mutableBytes];
+		NSMutableData* vertexData = [NSMutableData dataWithCapacity: indexCount * sizeof(GLKVector3)];
+		GLKVector3* vertices = [vertexData mutableBytes];
 		for (NSUInteger n = 0; n < indexCount; ++n)
 		{
 			NSUInteger index = indexData[n];
