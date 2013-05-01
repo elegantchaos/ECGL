@@ -9,15 +9,13 @@
 
 @interface ECGLShader : NSObject 
 {
-	NSUInteger	mType;
-	NSUInteger	mShader;
-	BOOL		mCompiled;
+	GLenum	mType;
 }
 
-@property (readonly, nonatomic) NSUInteger	shader;
+@property (readonly, nonatomic) GLuint	shader;
 @property (readonly, nonatomic) BOOL		isCompiled;
 
-- (id)			initWithType: (NSUInteger) type;
+- (id)			initWithType: (GLuint) type;
 - (int)			compileFromResourceNamed: (NSString*) source;
 - (int)			compileFromSource: (NSString*) source;
 - (int)			compileFromPath: (NSString*) path;

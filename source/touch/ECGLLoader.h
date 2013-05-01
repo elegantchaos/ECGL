@@ -11,12 +11,12 @@
 @class ECGLMesh;
 @class ECGLShaderProgram;
 
-@interface ECGLLoader : NSObject
+@interface ECGLLoader : NSObject<NSXMLParserDelegate>
 {
 	NSXMLParser*			mParser;
 	NSMutableString*		mContent;
-	NSMutableData*			mIndexes;
-	NSMutableData*			mFloats;
+	NSData*                 mIndexes;
+	NSData*                 mFloats;
 	NSString*				mSourceID;
 	NSString*				mPositionsID;
 	NSString*				mNormalsID;

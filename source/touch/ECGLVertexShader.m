@@ -7,8 +7,6 @@
 
 #import "ECGLVertexShader.h"
 
-#include <OpenGLES/ES2/gl.h>
-
 
 @implementation ECGLVertexShader
 

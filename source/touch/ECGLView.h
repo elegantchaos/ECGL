@@ -5,19 +5,18 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "GLKVector3.h"
-#import <OpenGLES/EAGL.h>
-
 /*
 This class wraps the CAEAGLLayer from CoreAnimation into a convenient UIView subclass.
 The view content is basically an EAGL surface you render your OpenGL scene into.
 Note that setting the view non-opaque will only work if the EAGL surface has an alpha channel.
 */
 
+@class EAGLContext;
+
 @interface ECGLView : UIView 
 {
 @protected
-	Matrix3D	mProjection;
+	GLKMatrix4	mProjection;
     
 @private
     /* The pixel dimensions of the backbuffer */

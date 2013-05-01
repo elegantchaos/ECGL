@@ -14,11 +14,6 @@
 //! Properties.
 // --------------------------------------------------------------------------
 
-- (void) dealloc
-{
-	
-	[super dealloc];
-}
 
 - (void) resolveIndexForProgram: (ECGLShaderProgram*) program
 {

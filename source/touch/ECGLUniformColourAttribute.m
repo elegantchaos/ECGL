@@ -21,7 +21,7 @@
 
 - (void) use
 {
-	Color c = self.colour;
+	GLKVector4 c = self.colour;
 	glUniform4fv(self.index, GL_FLOAT, (GLfloat*) &c); 
 }
 

@@ -9,7 +9,7 @@
 
 @interface ECGLTexture : NSObject 
 {
-	NSUInteger	texture;  
+	GLuint	texture;
 	NSString	*filename;
 }
 @property (nonatomic, retain) NSString *filename;

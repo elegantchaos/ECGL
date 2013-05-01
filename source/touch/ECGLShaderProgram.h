@@ -12,7 +12,7 @@
 
 @interface ECGLShaderProgram : NSObject 
 {
-	NSInteger mProgram;
+	GLuint mProgram;
 }
 
 @property (retain, nonatomic) ECGLVertexShader* vertexShader;

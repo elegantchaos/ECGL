@@ -7,12 +7,7 @@
 
 #import "ECGLTexture.h"
 
-#import <OpenGLES/EAGL.h>
-#import <OpenGLES/ES1/gl.h>
-#import <OpenGLES/ES1/glext.h>
-
 @implementation ECGLTexture
-@synthesize filename;
 
 - (id) initWithResourceNamed: (NSString*) name
 {

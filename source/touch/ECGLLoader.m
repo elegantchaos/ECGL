@@ -12,8 +12,6 @@
 #import "ECGLArrayAttribute.h"
 #import "ECGLShaderProgram.h"
 
-#import <ECFoundation/NSString+ECUtilities.h>
-
 ECDefineDebugChannel(LoaderChannel);
 
 @interface ECGLLoader()
@@ -21,15 +19,6 @@ ECDefineDebugChannel(LoaderChannel);
 @end;
 
 @implementation ECGLLoader
-
-ECPropertySynthesize(defaultProgram);
-
-- (void) dealloc
-{
-	ECPropertyDealloc(defaultProgram);
-
-	[super dealloc];
-}
 
 - (ECGLMesh*) loadMeshFromResourceNamed:(NSString *)name
 {
@@ -52,7 +41,6 @@ ECPropertySynthesize(defaultProgram);
 {
 	NSURL* url = [[NSURL alloc] initFileURLWithPath: path];
 	ECGLMesh* mesh = [self loadMeshFromURL: url];
-	[url release];
 
 	return mesh;
 }
@@ -67,13 +55,12 @@ ECPropertySynthesize(defaultProgram);
 	{
 	}
 	
-	[mParser release];
 	mParser = nil;
 
 	ECGLMesh* mesh = mResult;
 	mResult = nil;
 	
-	return [mesh autorelease];
+	return mesh;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict 
@@ -139,14 +126,13 @@ ECPropertySynthesize(defaultProgram);
 	{
 		NSLog(@"bigjobs");
 		NSString* string = [mContent copy];
-		mFloats = [[string splitWordsIntoFloats] retain];
-		[string release];
+		mFloats = [string splitWordsIntoFloats];
 	}
 	
 	else if ([elementName isEqualToString:@"p"]) 
 	{
 		ECAssertNil(mIndexes);
-		mIndexes = [[[NSString stringWithString: mContent] splitWordsIntoInts] retain];
+		mIndexes = [[NSString stringWithString: mContent] splitWordsIntoInts];
 	}
 
 	else if ([elementName isEqualToString: @"source"])
@@ -154,7 +140,6 @@ ECPropertySynthesize(defaultProgram);
 		if (mSourceID && mFloats && mSources)
 		{
 			[mSources setObject: mFloats forKey:mSourceID];
-			[mFloats release];
 			mFloats = nil;
 			mSourceID = nil;
 		}
@@ -168,7 +153,6 @@ ECPropertySynthesize(defaultProgram);
 	if (mContent)
 	{
 		ECDebug(LoaderChannel, @"Content for element %@ was %@", elementName, mContent);
-		[mContent release];
 		mContent = nil;
 	}
 }
@@ -188,7 +172,7 @@ ECPropertySynthesize(defaultProgram);
 	{
 		NSUInteger indexCount = [mIndexes length] / sizeof(int);
 		const int* indexData = [mIndexes bytes];
-		NSUInteger positionCount = [data length] / sizeof(Vertex3D); ECUnusedInRelease(positionCount);
+		NSUInteger positionCount = [data length] / sizeof(GLKMatrix3); ECUnusedInRelease(positionCount);
 		const GLKVector3* positionData = [data bytes];
 		
 		NSMutableData* vertexData = [NSMutableData dataWithCapacity: indexCount * sizeof(GLKVector3)];
@@ -216,14 +200,9 @@ ECPropertySynthesize(defaultProgram);
 
 		mResult = [[ECGLMesh alloc] init];
 		[mResult addGeometry: geometry];
-		
-		[attribute release];
-		[geometry release];
 	}
 	
-	[mIndexes release];
 	mIndexes = nil;
-	[mSources release];
 	mSources = nil;
 	mPositionsID = nil;
 	mNormalsID = nil;

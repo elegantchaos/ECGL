@@ -14,7 +14,7 @@
 
 @interface ECGLUniformColourAttribute : ECGLUniformAttribute 
 
-@property (assign, nonatomic) Color colour;
+@property (assign, nonatomic) GLKVector4 colour;
 
 // --------------------------------------------------------------------------
 // Public Properties.

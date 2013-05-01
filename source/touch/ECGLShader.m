@@ -15,9 +15,7 @@
 
 @implementation ECGLShader
 
-@synthesize shader = mShader;
-
-- (id) initWithType: (NSUInteger) type
+- (id) initWithType: (GLuint) type
 {
 	if ((self = [super init]) != nil)
 	{
@@ -30,18 +28,18 @@
 
 - (void) makeShader
 {
-	if (!mShader)
+	if (!_shader)
 	{
-		mShader = glCreateShader(mType);
+		_shader = glCreateShader(mType);
 	}
 }
 
 - (void) disposeShader
 {
-	if (mShader)
+	if (_shader)
 	{
-		glDeleteShader(mShader);
-		mShader = 0;
+		glDeleteShader(_shader);
+		_shader = 0;
 	}
 }
 
@@ -92,7 +90,7 @@
 - (int) compileFromSource: (NSString*) source
 {
 	int success = 0;
-	if (mShader)
+	if (_shader)
 	{
 		NSUInteger size;
 		NSRange range = NSMakeRange(0, [source length]);
@@ -101,12 +99,12 @@
 		[source getBytes: buffer maxLength: size usedLength: &size encoding: NSUTF8StringEncoding options: 0 range: range remainingRange: nil];
 		buffer[size] = 0;
 		
-		glShaderSource(mShader, 1, (const GLchar**) &buffer, NULL);
-		glCompileShader(mShader);
+		glShaderSource(_shader, 1, (const GLchar**) &buffer, NULL);
+		glCompileShader(_shader);
 		
 		free(buffer);
 		
-		glGetShaderiv(mShader, GL_COMPILE_STATUS, &success);
+		glGetShaderiv(_shader, GL_COMPILE_STATUS, &success);
 		if (success == 0)
 		{
 			[self logError];
@@ -119,10 +117,10 @@
 
 - (void) logError
 {
-	if (mShader)
+	if (_shader)
 	{
 		char errorMsg[2048];
-		glGetShaderInfoLog(mShader, sizeof(errorMsg), NULL, errorMsg);
+		glGetShaderInfoLog(_shader, sizeof(errorMsg), NULL, errorMsg);
 		NSLog(@"Shader error: %s", errorMsg); 
 	}
 }
@@ -130,10 +128,10 @@
 - (BOOL) isCompiled
 {
 	BOOL result = NO;
-	if (mShader)
+	if (_shader)
 	{
 		int success = 0;
-		glGetShaderiv(mShader, GL_COMPILE_STATUS, &success);
+		glGetShaderiv(_shader, GL_COMPILE_STATUS, &success);
 		result = (success != 0);
 	}
 	
