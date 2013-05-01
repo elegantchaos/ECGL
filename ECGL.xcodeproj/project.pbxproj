@@ -40,10 +40,14 @@
 		2201FDA617314E8C006F2D5E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2201FDA517314E8C006F2D5E /* OpenGL.framework */; };
 		2201FDA817314F4F006F2D5E /* ECGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDA717314F4F006F2D5E /* ECGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2201FDA917314F4F006F2D5E /* ECGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDA717314F4F006F2D5E /* ECGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2201FDB8173187AF006F2D5E /* ECGLBoundAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDB6173187AE006F2D5E /* ECGLBoundAttribute.h */; };
-		2201FDB9173187AF006F2D5E /* ECGLBoundAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDB6173187AE006F2D5E /* ECGLBoundAttribute.h */; };
+		2201FDB8173187AF006F2D5E /* ECGLBoundAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDB6173187AE006F2D5E /* ECGLBoundAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2201FDB9173187AF006F2D5E /* ECGLBoundAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDB6173187AE006F2D5E /* ECGLBoundAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2201FDBA173187AF006F2D5E /* ECGLBoundAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FDB7173187AE006F2D5E /* ECGLBoundAttribute.m */; };
 		2201FDBB173187AF006F2D5E /* ECGLBoundAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FDB7173187AE006F2D5E /* ECGLBoundAttribute.m */; };
+		2201FDBE17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDBC17318E7B006F2D5E /* ECGLUniformMatrix4Attribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2201FDBF17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDBC17318E7B006F2D5E /* ECGLUniformMatrix4Attribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2201FDC017318E7D006F2D5E /* ECGLUniformMatrix4Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FDBD17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.m */; };
+		2201FDC117318E7D006F2D5E /* ECGLUniformMatrix4Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FDBD17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.m */; };
 		2260A2EA15DFD7290057C9DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283A3BB14F52E93009142F7 /* Cocoa.framework */; };
 		2260A39B15DFE2DD0057C9DA /* ECLogging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2260A39815DFE2DD0057C9DA /* ECLogging.framework */; };
 		2260A3A015DFE6860057C9DA /* ECGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2260A2E915DFD7290057C9DA /* ECGL.framework */; };
@@ -107,6 +111,8 @@
 		2201FDA717314F4F006F2D5E /* ECGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGL.h; sourceTree = "<group>"; };
 		2201FDB6173187AE006F2D5E /* ECGLBoundAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLBoundAttribute.h; sourceTree = "<group>"; };
 		2201FDB7173187AE006F2D5E /* ECGLBoundAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLBoundAttribute.m; sourceTree = "<group>"; };
+		2201FDBC17318E7B006F2D5E /* ECGLUniformMatrix4Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLUniformMatrix4Attribute.h; sourceTree = "<group>"; };
+		2201FDBD17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLUniformMatrix4Attribute.m; sourceTree = "<group>"; };
 		2260A2E915DFD7290057C9DA /* ECGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2260A2FD15DFD7320057C9DA /* ECGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2260A30C15DFD96D0057C9DA /* IOSDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = IOSDebug.xcconfig; sourceTree = "<group>"; };
@@ -228,6 +234,8 @@
 				2201FDB7173187AE006F2D5E /* ECGLBoundAttribute.m */,
 				2201FD6917314A88006F2D5E /* ECGLArrayAttribute.m */,
 				2201FD6A17314A88006F2D5E /* ECGLAttribute.h */,
+				2201FDBC17318E7B006F2D5E /* ECGLUniformMatrix4Attribute.h */,
+				2201FDBD17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.m */,
 				2201FD6B17314A88006F2D5E /* ECGLAttribute.m */,
 				2201FD6C17314A88006F2D5E /* ECGLCommon.h */,
 				2201FD6D17314A88006F2D5E /* ECGLFragmentShader.h */,
@@ -332,6 +340,7 @@
 				2201FD9817314A88006F2D5E /* ECGLVertexShader.h in Headers */,
 				2201FDA817314F4F006F2D5E /* ECGL.h in Headers */,
 				2201FDB8173187AF006F2D5E /* ECGLBoundAttribute.h in Headers */,
+				2201FDBE17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +352,7 @@
 				2201FDA117314A94006F2D5E /* ECGLView.h in Headers */,
 				2201FDA917314F4F006F2D5E /* ECGL.h in Headers */,
 				2201FDB9173187AF006F2D5E /* ECGLBoundAttribute.h in Headers */,
+				2201FDBF17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +559,7 @@
 				2201FD9717314A88006F2D5E /* ECGLUniformColourAttribute.m in Sources */,
 				2201FD9917314A88006F2D5E /* ECGLVertexShader.m in Sources */,
 				2201FDBA173187AF006F2D5E /* ECGLBoundAttribute.m in Sources */,
+				2201FDC017318E7D006F2D5E /* ECGLUniformMatrix4Attribute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +570,7 @@
 				2201FDA017314A94006F2D5E /* ECGLTexture.m in Sources */,
 				2201FDA217314A94006F2D5E /* ECGLView.m in Sources */,
 				2201FDBB173187AF006F2D5E /* ECGLBoundAttribute.m in Sources */,
+				2201FDC117318E7D006F2D5E /* ECGLUniformMatrix4Attribute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

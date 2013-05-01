@@ -10,3 +10,4 @@
 #import "ECGLUniformAttribute.h"
 #import "ECGLUniformColourAttribute.h"
 #import "ECGLBoundAttribute.h"
+#import "ECGLUniformMatrix4Attribute.h"

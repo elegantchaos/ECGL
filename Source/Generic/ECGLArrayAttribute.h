@@ -26,4 +26,9 @@
 @property (assign, nonatomic) GLboolean normalized;
 @property (assign, nonatomic) GLsizei stride;
 
++ (instancetype)arrayOfVector3WithName:(NSString*)name capacity:(NSUInteger)capacity;
++ (instancetype)arrayOfVector4WithName:(NSString*)name capacity:(NSUInteger)capacity;
+
+- (void*)mutableBytes;
+
 @end

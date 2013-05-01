@@ -99,7 +99,7 @@
 - (GLint)locationForAttribute:(NSString*)name
 {
 	
-	int location = 0;
+	int location = -1;
 	if (self.program)
 	{
 		location = glGetAttribLocation(self.program, [name UTF8String]);
@@ -110,7 +110,7 @@
 
 - (int)locationForUniform:(NSString*)name
 {
-	int location = 0;
+	int location = -1;
 	if (self.program)
 	{
 		location = glGetUniformLocation(self.program, [name UTF8String]);
@@ -123,7 +123,7 @@
 {
 	ECGLBoundAttribute* result = nil;
 	GLint location = [self locationForAttribute:attribute.name];
-	if (location)
+	if (location != -1)
 	{
 		result = [[ECGLBoundAttribute alloc] initWithAttribute:attribute location:location];
 	}
@@ -135,7 +135,7 @@
 {
 	ECGLBoundAttribute* result = nil;
 	GLint location = [self locationForUniform:uniform.name];
-	if (location)
+	if (location != -1)
 	{
 		result = [[ECGLBoundAttribute alloc] initWithAttribute:uniform location:location];
 	}
