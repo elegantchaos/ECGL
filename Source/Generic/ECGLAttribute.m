@@ -14,16 +14,6 @@
 //! Properties.
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(name);
-ECPropertySynthesize(index);
-
-- (void) dealloc
-{
-	ECPropertyDealloc(name);
-	
-	[super dealloc];
-}
-
 - (void) resolveIndexForProgram: (ECGLShaderProgram*) program
 {
 	self.index = [program locationForAttribute: self.name];

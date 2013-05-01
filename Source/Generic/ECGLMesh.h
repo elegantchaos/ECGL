@@ -29,9 +29,9 @@
 // Public Methods.
 // --------------------------------------------------------------------------
 
-- (void)		updateTransform;
-- (void)		resolveIndexes;
-- (void)		drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection  wireframe: (BOOL) wireframe;
-- (void)		addGeometry:(ECGLGeometry *) geometry;
+- (void)updateTransform;
+- (void)resolveIndexes;
+- (void)drawWithCamera:(GLKMatrix4)camera projection:(GLKMatrix4)projection wireframe:(BOOL)wireframe;
+- (void)addGeometry:(ECGLGeometry *) geometry;
 
 @end

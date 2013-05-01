@@ -4,4 +4,4 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-WARNING_CFLAGS = $(inherited) -Wno-arc-bridge-casts-disallowed-in-nonarc -Wno-deprecated-declarations
+CLANG_ENABLE_OBJC_ARC = YES

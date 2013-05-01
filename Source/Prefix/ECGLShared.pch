@@ -4,10 +4,15 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#define EC_CORE 1
+#define EC_GL 1
 
 #ifdef __OBJC__
 
+#import <Foundation/Foundation.h>
 #import <ECLogging/ECLogging.h>
+#import <ECCore/ECCore.h>
+
+#undef __gl_h_
+#import <GLKit/GLKit.h>
 
 #endif

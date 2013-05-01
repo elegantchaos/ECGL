@@ -20,16 +20,16 @@
 	[self.geometry resolveIndexes];
 }
 
-- (void) drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection  wireframe: (BOOL) wireframe
+- (void) drawWithCamera:(GLKMatrix4)camera projection:(GLKMatrix4)projection wireframe:(BOOL)wireframe
 {
 	
 	if (wireframe)
 	{
-		[self.geometry drawWireframeWithCamera: camera projection: projection];
+		[self.geometry drawWireframeWithCamera:camera projection:projection];
 	}
 	else
 	{
-		[self.geometry drawWithCamera: camera projection: projection];
+		[self.geometry drawWithCamera:camera projection:projection];
 	}
 }
 

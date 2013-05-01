@@ -38,14 +38,14 @@
 // Public Methods.
 // --------------------------------------------------------------------------
 
-- (void)		updateTransformForPosition: (GLKVector3) position orientation: (GLKVector3) orientation;
-- (GLfloat*)	transform;
+- (void)		updateTransformForPosition:(GLKVector3)position orientation:(GLKVector3)orientation;
+- (GLKMatrix4)	transform;
 - (void)		resolveIndexes;
-- (void)		drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection;
-- (void)		drawWireframeWithCamera: (GLfloat*) camera projection: (GLfloat*) projection;
+- (void)		drawWithCamera:(GLKMatrix4)camera projection:(GLKMatrix4)projection;
+- (void)		drawWireframeWithCamera:(GLKMatrix4) camera projection:(GLKMatrix4)projection;
 
-- (void)		addTexture: (ECGLTexture*) texture;
-- (void)		addAttribute: (ECGLAttribute*) attribute;
-- (void)		addGeometry:(ECGLGeometry *) geometry;
+- (void)		addTexture:(ECGLTexture*)texture;
+- (void)		addAttribute:(ECGLAttribute*)attribute;
+- (void)		addGeometry:(ECGLGeometry*)geometry;
 
 @end

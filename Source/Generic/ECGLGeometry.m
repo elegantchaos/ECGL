@@ -43,29 +43,20 @@
 
 - (void) updateTransformForPosition: (GLKVector3) position orientation: (GLKVector3) orientation
 {
-    static const GLKVector3 rotateX = {1.f, 0.f, 0.f};
-    static const GLKVector3 rotateY = {0.f, 1.f, 0.f};
-    static const GLKVector3 rotateZ = {0.f, 0.f, 1.f};
-	
-	Matrix3D rotationXMatrix;
-    Matrix3DSetRotationByDegrees(rotationXMatrix, orientation.x, rotateX);
-	
-	Matrix3D rotationYMatrix;
-    Matrix3DSetRotationByDegrees(rotationYMatrix, orientation.y, rotateY);
-	
-	Matrix3D rotationZMatrix;
-    Matrix3DSetRotationByDegrees(rotationZMatrix, orientation.z, rotateZ);
-	
-	Matrix3D translationMatrix;
-	Matrix3DSetTranslation(translationMatrix, -position.x, -position.y, -position.z);
-	
-	Matrix3D temp;
-	Matrix3DMultiply(rotationXMatrix, rotationYMatrix, mTransform);
-	Matrix3DMultiply(rotationZMatrix, mTransform, temp);
-	Matrix3DMultiply(translationMatrix, temp, mTransform);
+	GLKMatrix4 rotationXMatrix = GLKMatrix4Rotate(GLKMatrix4Identity, GLKMathDegreesToRadians(orientation.x), 1.0f, 0.0f, 0.0f);
+
+	GLKMatrix4 rotationYMatrix = GLKMatrix4Rotate(GLKMatrix4Identity, GLKMathDegreesToRadians(orientation.y), 0.0f, 1.0f, 0.0f);
+
+	GLKMatrix4 rotationZMatrix = GLKMatrix4Rotate(GLKMatrix4Identity, GLKMathDegreesToRadians(orientation.z), 0.0f, 0.0f, 1.0f);
+
+	GLKMatrix4 translationMatrix = GLKMatrix4Translate(GLKMatrix4Identity, -position.x, -position.y, -position.z);
+
+	GLKMatrix4 rotXY = GLKMatrix4Multiply(rotationXMatrix, rotationYMatrix);
+	GLKMatrix4 rotXYZ = GLKMatrix4Multiply(rotationZMatrix, rotXY);
+	mTransform = GLKMatrix4Multiply(translationMatrix, rotXYZ);
 }
 
-- (GLfloat*) transform
+- (GLKMatrix4) transform
 {
 	return mTransform;
 }
@@ -147,17 +138,14 @@
 	}
 }
 
-- (void) drawWithCamera: (GLfloat*) camera projection: (GLfloat*) projection
+- (void) drawWithCamera:(GLKMatrix4)camera projection:(GLKMatrix4)projection
 {
 	[self use];
 
-	Matrix3D modelView;
-	Matrix3DMultiply(camera, mTransform, modelView);
-	
-	Matrix3D modelViewProjection;
-	Matrix3DMultiply(projection, modelView, modelViewProjection);		
+	GLKMatrix4 modelView = GLKMatrix4Multiply(camera, mTransform);
+	GLKMatrix4 modelViewProjection = GLKMatrix4Multiply(projection, modelView);
 
-	glUniformMatrix4fv(mMVP, 1, GL_FALSE, modelViewProjection);
+	glUniformMatrix4fv(mMVP, 1, GL_FALSE, (GLfloat*) &modelViewProjection);
 	glDrawArrays(GL_TRIANGLES, 0, (GLsizei) self.count);
 	
 	for (ECGLGeometry* sub in mGeometry)
@@ -166,17 +154,14 @@
 	}
 }
 
-- (void) drawWireframeWithCamera: (GLfloat*) camera projection: (GLfloat*) projection
+- (void) drawWireframeWithCamera:(GLKMatrix4)camera projection:(GLKMatrix4)projection
 {
 	[self use];
 
-	Matrix3D modelView;
-	Matrix3DMultiply(camera, mTransform, modelView);
-	
-	Matrix3D modelViewProjection;
-	Matrix3DMultiply(projection, modelView, modelViewProjection);		
+	GLKMatrix4 modelView = GLKMatrix4Multiply(camera, mTransform);
+	GLKMatrix4 modelViewProjection = GLKMatrix4Multiply(projection, modelView);
 
-	glUniformMatrix4fv(mMVP, 1, GL_FALSE, modelViewProjection);
+	glUniformMatrix4fv(mMVP, 1, GL_FALSE, (GLfloat*) &modelViewProjection);
 	
 	for(NSUInteger i = 0; i < self.count; i += 3)
 		glDrawArrays(GL_LINE_LOOP, (GLint)i, 3);
