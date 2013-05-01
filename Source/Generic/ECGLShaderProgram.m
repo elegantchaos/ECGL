@@ -8,19 +8,21 @@
 #import "ECGLShaderProgram.h"
 #import "ECGLVertexShader.h"
 #import "ECGLFragmentShader.h"
+#import "ECGLAttribute.h"
+#import "ECGLBoundAttribute.h"
+#import "ECGLUniformAttribute.h"
 
 @interface ECGLShaderProgram()
-- (void) makeProgram;
-- (void) disposeProgram;
-- (void) releaseShaders;
+
+@property (assign, nonatomic) GLuint program;
+@property (strong, nonatomic) ECGLVertexShader* vertexShader;
+@property (strong, nonatomic) ECGLFragmentShader* fragmentShader;
+
 @end
 
 @implementation ECGLShaderProgram
 
-@synthesize vertexShader;
-@synthesize fragmentShader;
-
-- (id) initWithShaderResourcesNamed: (NSString*) name
+- (id)initWithShaderResourcesNamed:(NSString*)name
 {
 	ECGLVertexShader* vs = [[ECGLVertexShader alloc] init];
 	[vs compileFromResourceNamed: name];
@@ -33,62 +35,57 @@
 	return self;
 }
 
-- (id) initWithVertexShader: (ECGLVertexShader*) vs fragmentShader: (ECGLFragmentShader*) fs
+- (id)initWithVertexShader:(ECGLVertexShader*)vs fragmentShader:(ECGLFragmentShader*)fs
 {
-	if ((self = [super init]) != nil)
+	if ((self = [super init])!= nil)
 	{
-		[self makeProgram];
-		if (mProgram)
-		{
-			self.vertexShader = vs;
-			self.fragmentShader = fs;
-		}
+		self.vertexShader = vs;
+		self.fragmentShader = fs;
 	}
 	
 	return self;
 }
 
-- (void) releaseShaders
+- (void)releaseShaders
 {
 	self.vertexShader = nil;
 	self.fragmentShader = nil;
 }
 
 
-- (void) makeProgram
+- (void)disposeProgram
 {
-	if (!mProgram)
+	if (self.program)
 	{
-		mProgram = glCreateProgram();
+		glDeleteProgram(self.program);
+		self.program = 0;
 	}
 }
 
-- (void) disposeProgram
+- (void)use
 {
-	if (mProgram)
+	if (!self.program)
 	{
-		glDeleteProgram(mProgram);
-		mProgram = 0;
+		[self compileAndLink];
 	}
+
+	glUseProgram(self.program);
 }
 
-- (void) use
-{
-	glUseProgram(mProgram);
-}
-
-- (int) compileAndLink
+- (int)compileAndLink
 {
 	int linked = 0;
 	
 	if ([self.vertexShader isCompiled] && [self.fragmentShader isCompiled])
 	{
-		if (mProgram)
+		GLuint program = glCreateProgram();
+		if (program)
 		{
-			glAttachShader(mProgram, [self.vertexShader shader]);
-			glAttachShader(mProgram, [self.fragmentShader shader]);
-			glLinkProgram(mProgram);
-			glGetProgramiv(mProgram, GL_LINK_STATUS, &linked);
+			glAttachShader(program, [self.vertexShader shader]);
+			glAttachShader(program, [self.fragmentShader shader]);
+			glLinkProgram(program);
+			glGetProgramiv(program, GL_LINK_STATUS, &linked);
+			self.program = program;
 			if (linked == 0)
 			{
 				[self disposeProgram];
@@ -99,39 +96,52 @@
 	return linked;
 }
 
-- (int) locationForAttribute: (NSString*) name
+- (GLint)locationForAttribute:(NSString*)name
 {
 	
 	int location = 0;
-	if (mProgram)
+	if (self.program)
 	{
-		NSRange range = NSMakeRange(0, [name length]);
-		GLchar buffer[256];
-		NSUInteger size;
-		[name getBytes: buffer maxLength: 255 usedLength: &size encoding: NSUTF8StringEncoding options: 0 range: range remainingRange: nil];
-		buffer[size] = 0;
-
-		location = glGetAttribLocation(mProgram, buffer);
+		location = glGetAttribLocation(self.program, [name UTF8String]);
 	}
 
 	return location;
 }
 
-- (int) locationForUniform: (NSString*) name
+- (int)locationForUniform:(NSString*)name
 {
 	int location = 0;
-	if (mProgram)
+	if (self.program)
 	{
-		NSRange range = NSMakeRange(0, [name length]);
-		GLchar buffer[256];
-		NSUInteger size;
-		[name getBytes: buffer maxLength: 255 usedLength: &size encoding: NSUTF8StringEncoding options: 0 range: range remainingRange: nil];
-		buffer[size] = 0;
-
-		location = glGetUniformLocation(mProgram, buffer);
+		location = glGetUniformLocation(self.program, [name UTF8String]);
 	}
 	
 	return location;
+}
+
+- (ECGLBoundAttribute*)bindingForAttribute:(ECGLAttribute*)attribute
+{
+	ECGLBoundAttribute* result = nil;
+	GLint location = [self locationForAttribute:attribute.name];
+	if (location)
+	{
+		result = [[ECGLBoundAttribute alloc] initWithAttribute:attribute location:location];
+	}
+
+	return result;
+}
+
+- (ECGLBoundAttribute*)bindingForUniform:(ECGLUniformAttribute*)uniform
+{
+	ECGLBoundAttribute* result = nil;
+	GLint location = [self locationForUniform:uniform.name];
+	if (location)
+	{
+		result = [[ECGLBoundAttribute alloc] initWithAttribute:uniform location:location];
+	}
+
+	return result;
+
 }
 
 @end

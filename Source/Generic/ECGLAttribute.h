@@ -5,32 +5,19 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-//#import "ECGLCommon.h"
-
 @class ECGLShaderProgram;
 
-// --------------------------------------------------------------------------
-//! A high level abstraction of some 3d attributes - for example
-//! an array of vertices or texture coordinates.
-// --------------------------------------------------------------------------
+/**
+ A high level abstraction of some 3d attributes - for example
+ an array of vertices or texture coordinates.
+ */
 
+@class ECGLBoundAttribute;
 @interface ECGLAttribute : NSObject 
-{
-}
 
-// --------------------------------------------------------------------------
-// Public Properties.
-// --------------------------------------------------------------------------
+@property (readonly, strong, nonatomic) NSString* name;
 
-@property (strong, nonatomic) NSString* name;
-@property (assign, nonatomic) GLuint index;
-
-
-// --------------------------------------------------------------------------
-// Public Methods
-// --------------------------------------------------------------------------
-
-- (void) use;
-- (void) resolveIndexForProgram: (ECGLShaderProgram*) program;
+- (id)initWithName:(NSString*)name;
+- (void)useWithBinding:(ECGLBoundAttribute*)binding;
 
 @end

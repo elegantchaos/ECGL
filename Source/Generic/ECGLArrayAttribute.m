@@ -6,7 +6,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECGLArrayAttribute.h"
-
+#import "ECGLBoundAttribute.h"
 
 @implementation ECGLArrayAttribute
 
@@ -14,10 +14,10 @@
 //! Properties.
 // --------------------------------------------------------------------------
 
-- (void) use
+- (void)useWithBinding:(ECGLBoundAttribute*)binding
 {
-	glVertexAttribPointer(self.index, self.size, self.type, self.normalized, self.stride, [self.data bytes]);
-	glEnableVertexAttribArray(self.index);
+	glVertexAttribPointer(binding.location, self.size, self.type, self.normalized, self.stride, [self.data bytes]);
+	glEnableVertexAttribArray(binding.location);
 }
 
 @end

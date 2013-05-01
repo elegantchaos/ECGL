@@ -7,6 +7,7 @@
 
 #import "ECGLUniformColourAttribute.h"
 #import "ECGLShaderProgram.h"
+#import "ECGLBoundAttribute.h"
 
 @implementation ECGLUniformColourAttribute
 
@@ -14,15 +15,10 @@
 //! Properties.
 // --------------------------------------------------------------------------
 
-- (void) resolveIndexForShader: (ECGLShaderProgram*) shader
-{
-	self.index = [shader locationForUniform: self.name];
-}
-
-- (void) use
+- (void)useWithBinding:(ECGLBoundAttribute*)binding
 {
 	GLKVector4 c = self.colour;
-	glUniform4fv(self.index, GL_FLOAT, (GLfloat*) &c); 
+	glUniform4fv(binding.location, GL_FLOAT, (GLfloat*) &c);
 }
 
 @end

@@ -184,10 +184,9 @@ ECDefineDebugChannel(LoaderChannel);
 			vertices[n] = positionData[index];
 		}
 		
-		ECGLArrayAttribute* attribute = [[ECGLArrayAttribute alloc] init];
+		ECGLArrayAttribute* attribute = [[ECGLArrayAttribute alloc] initWithName:@"position"];
 		attribute.data = vertexData;
 		attribute.count = indexCount;
-		attribute.name = @"position";
 		attribute.size = 3;
 		attribute.type = GL_FLOAT;
 		attribute.normalized = NO;
@@ -196,7 +195,7 @@ ECDefineDebugChannel(LoaderChannel);
 		ECGLGeometry* geometry = [[ECGLGeometry alloc] init];
 		geometry.count = indexCount;
 		geometry.shaders = self.defaultProgram;
-		[geometry.attributes addObject: attribute];
+		[geometry.attributes addObject:[self.defaultProgram bindingForAttribute:attribute]];
 
 		mResult = [[ECGLMesh alloc] init];
 		[mResult addGeometry: geometry];

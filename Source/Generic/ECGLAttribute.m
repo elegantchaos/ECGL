@@ -8,18 +8,29 @@
 #import "ECGLAttribute.h"
 #import "ECGLShaderProgram.h"
 
+@interface ECGLAttribute()
+
+@property (strong, readwrite, nonatomic) NSString* name;
+
+@end
+
 @implementation ECGLAttribute
 
 // --------------------------------------------------------------------------
 //! Properties.
 // --------------------------------------------------------------------------
 
-- (void) resolveIndexForProgram: (ECGLShaderProgram*) program
+- (id)initWithName:(NSString*)name
 {
-	self.index = [program locationForAttribute: self.name];
+	if ((self = [super init]) != nil)
+	{
+		self.name = name;
+	}
+
+	return self;
 }
 
-- (void) use
+- (void)useWithBinding:(ECGLBoundAttribute*)binding
 {
 	ECAssertShouldntBeHere();
 }

@@ -16,11 +16,4 @@
 
 @property (assign, nonatomic) GLKVector4 colour;
 
-// --------------------------------------------------------------------------
-// Public Properties.
-// --------------------------------------------------------------------------
-
-- (void) resolveIndexForShader: (ECGLShaderProgram*) shader;
-- (void) use;
-
 @end

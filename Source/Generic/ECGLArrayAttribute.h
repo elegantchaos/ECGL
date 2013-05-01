@@ -26,10 +26,4 @@
 @property (assign, nonatomic) GLboolean normalized;
 @property (assign, nonatomic) GLsizei stride;
 
-// --------------------------------------------------------------------------
-// Public Methods
-// --------------------------------------------------------------------------
-
-- (void) use;
-
 @end

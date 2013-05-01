@@ -7,7 +7,7 @@
 
 #import "ECGLGeometry.h"
 #import "ECGLCommon.h"
-#import "ECGLAttribute.h"
+#import "ECGLBoundAttribute.h"
 #import "ECGLShaderProgram.h"
 #import "ECGLTexture.h"
 #import "ECGLTextureLink.h"
@@ -78,6 +78,7 @@
 
 - (void) resolveIndexes
 {
+#if 0 // TODO: redo this
 	mMVP = [self.shaders locationForUniform: @"matrix"];
 	
 	for (ECGLAttribute* attribute in self.attributes)
@@ -95,13 +96,14 @@
 	{
 		[sub resolveIndexes];
 	}
+#endif
 }
 
 - (void) use
 {
 	[self.shaders use];
 	
-	for (ECGLAttribute* attribute in self.attributes)
+	for (ECGLBoundAttribute* attribute in self.attributes)
 	{
 		[attribute use];
 	}
