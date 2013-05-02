@@ -200,7 +200,6 @@
 		0867D691FE84028FC02AAC07 /* ECFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				2201FDCA1732652C006F2D5E /* CoreVideo.framework */,
 				2260A30B15DFD8FB0057C9DA /* Source */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				226C205C14FBCB8F00D2751B /* Scripts */,
@@ -214,6 +213,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2201FDCA1732652C006F2D5E /* CoreVideo.framework */,
 				2201FDA517314E8C006F2D5E /* OpenGL.framework */,
 				2201FDA317314E85006F2D5E /* GLKit.framework */,
 				2260A39715DFE2DC0057C9DA /* ECConfig.framework */,
