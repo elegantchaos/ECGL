@@ -11,7 +11,6 @@
 		2201FD8217314A88006F2D5E /* ECGLArrayAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FD6917314A88006F2D5E /* ECGLArrayAttribute.m */; };
 		2201FD8317314A88006F2D5E /* ECGLAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FD6A17314A88006F2D5E /* ECGLAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2201FD8417314A88006F2D5E /* ECGLAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FD6B17314A88006F2D5E /* ECGLAttribute.m */; };
-		2201FD8517314A88006F2D5E /* ECGLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FD6C17314A88006F2D5E /* ECGLCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2201FD8617314A88006F2D5E /* ECGLFragmentShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FD6D17314A88006F2D5E /* ECGLFragmentShader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2201FD8717314A88006F2D5E /* ECGLFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FD6E17314A88006F2D5E /* ECGLFragmentShader.m */; };
 		2201FD8817314A88006F2D5E /* ECGLGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FD6F17314A88006F2D5E /* ECGLGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,7 +84,6 @@
 		2201FD6917314A88006F2D5E /* ECGLArrayAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLArrayAttribute.m; sourceTree = "<group>"; };
 		2201FD6A17314A88006F2D5E /* ECGLAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLAttribute.h; sourceTree = "<group>"; };
 		2201FD6B17314A88006F2D5E /* ECGLAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLAttribute.m; sourceTree = "<group>"; };
-		2201FD6C17314A88006F2D5E /* ECGLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLCommon.h; sourceTree = "<group>"; };
 		2201FD6D17314A88006F2D5E /* ECGLFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLFragmentShader.h; sourceTree = "<group>"; };
 		2201FD6E17314A88006F2D5E /* ECGLFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLFragmentShader.m; sourceTree = "<group>"; };
 		2201FD6F17314A88006F2D5E /* ECGLGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLGeometry.h; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 				2201FDBC17318E7B006F2D5E /* ECGLUniformMatrix4Attribute.h */,
 				2201FDBD17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.m */,
 				2201FD6B17314A88006F2D5E /* ECGLAttribute.m */,
-				2201FD6C17314A88006F2D5E /* ECGLCommon.h */,
 				2201FD6D17314A88006F2D5E /* ECGLFragmentShader.h */,
 				2201FD6E17314A88006F2D5E /* ECGLFragmentShader.m */,
 				2201FD6F17314A88006F2D5E /* ECGLGeometry.h */,
@@ -338,7 +335,6 @@
 			files = (
 				2201FD8117314A88006F2D5E /* ECGLArrayAttribute.h in Headers */,
 				2201FD8317314A88006F2D5E /* ECGLAttribute.h in Headers */,
-				2201FD8517314A88006F2D5E /* ECGLCommon.h in Headers */,
 				2201FD8617314A88006F2D5E /* ECGLFragmentShader.h in Headers */,
 				2201FD8817314A88006F2D5E /* ECGLGeometry.h in Headers */,
 				2201FD8A17314A88006F2D5E /* ECGLLoader.h in Headers */,

@@ -1,10 +1,8 @@
-//
-//  ECGLView.m
-//  ECGL
-//
-//  Created by Sam Deane on 02/05/2013.
-//  Copyright (c) 2013 Elegant Chaos. All rights reserved.
-//
+// --------------------------------------------------------------------------
+//  Copyright 2013 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's
+//  liberal license: http://www.elegantchaos.com/license/liberal
+// --------------------------------------------------------------------------
 
 #import "ECGLView.h"
 
@@ -19,6 +17,7 @@
 
 @implementation ECGLView
 
+ECDefineDebugChannel(ECGLViewChannel);
 
 - (void)drawRect:(NSRect)dirtyRect
 {
@@ -33,8 +32,19 @@
 	CGLFlushDrawable([context CGLContextObj]);
 }
 
+- (void)checkError
+{
+	GLuint error = glGetError();
+	if (error != GL_NO_ERROR)
+	{
+		ECDebug(ECGLViewChannel, @"gl error %ld", error);
+	}
+}
+
 - (void)prepareOpenGL
 {
+	ECDebug(ECGLViewChannel, @"setting up view");
+
     [super prepareOpenGL];
 
 	NSOpenGLContext* context = self.openGLContext;
@@ -47,7 +57,11 @@
 	GLint swapInt = 1;
 	[context setValues:&swapInt forParameter:NSOpenGLCPSwapInterval];
 
-    [self setupDisplayLink];
+	CVReturn result = [self setupDisplayLink];
+    if (result != kCVReturnSuccess)
+	{
+		ECDebug(ECGLViewChannel, @"display link failed with result %ld", result);
+	}
 
 	[self setupResources];
 	
@@ -58,7 +72,8 @@
 	CGFloat red, green, blue, alpha;
 	[self.background getRed:&red green:&green blue:&blue alpha:&alpha];
     glClearColor((GLclampf)red, (GLclampf)green, (GLclampf)blue, (GLclampf)alpha);
-	
+
+	[self checkError];
 }
 
 - (void)drawContent:(NSRect)dirtyRect
@@ -94,6 +109,8 @@
 //
 - (void)reshape
 {
+	ECDebug(ECGLViewChannel, @"reshaped");
+
     NSOpenGLContext* context = self.openGLContext;
 	[context makeCurrentContext];
     [self doUpdate];
@@ -102,24 +119,40 @@
 
 #pragma mark - Display Link
 
-- (void)setupDisplayLink
+- (CVReturn)setupDisplayLink
 {
+	ECDebug(ECGLViewChannel, @"setup display link");
+	
     // Create a display link capable of being used with all active displays
     CVDisplayLinkRef displayLink;
-    CVDisplayLinkCreateWithActiveCGDisplays(&displayLink);
+    CVReturn result = CVDisplayLinkCreateWithActiveCGDisplays(&displayLink);
+	if (result == kCVReturnSuccess)
+	{
+		// Set the renderer output callback function
+		result = CVDisplayLinkSetOutputCallback(displayLink, &DisplayLinkCallback, (__bridge void*) self);
+	}
 
-    // Set the renderer output callback function
-    CVDisplayLinkSetOutputCallback(displayLink, &DisplayLinkCallback, (__bridge void*) self);
+	if (result == kCVReturnSuccess)
+	{
+		// Set the display link for the current renderer
+		NSOpenGLContext* context = self.openGLContext;
+		CGLContextObj cglContext = [context CGLContextObj];
+		CGLPixelFormatObj cglPixelFormat = [[self pixelFormat] CGLPixelFormatObj];
+		result = CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, cglContext, cglPixelFormat);
+	}
 
-    // Set the display link for the current renderer
-	NSOpenGLContext* context = self.openGLContext;
-    CGLContextObj cglContext = [context CGLContextObj];
-    CGLPixelFormatObj cglPixelFormat = [[self pixelFormat] CGLPixelFormatObj];
-    CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, cglContext, cglPixelFormat);
+	if (result == kCVReturnSuccess)
+	{
+		// Activate the display link
+		result = CVDisplayLinkStart(displayLink);
+	}
 
-    // Activate the display link
-    CVDisplayLinkStart(displayLink);
-    self.displayLink = displayLink;
+	if (result == kCVReturnSuccess)
+	{
+		self.displayLink = displayLink;
+	}
+
+	return result;
 }
 
 - (CVReturn)firedDisplayLink:(const CVTimeStamp*)outputTime

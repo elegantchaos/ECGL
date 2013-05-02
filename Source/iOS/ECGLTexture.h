@@ -1,11 +1,8 @@
 // --------------------------------------------------------------------------
-//! @author Sam Deane
-//! @date 11/08/2010
-//
-//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2013 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's
+//  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
-
-#import <Foundation/Foundation.h>
 
 @interface ECGLTexture : NSObject 
 {
