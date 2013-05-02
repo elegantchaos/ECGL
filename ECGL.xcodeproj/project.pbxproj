@@ -48,6 +48,10 @@
 		2201FDBF17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDBC17318E7B006F2D5E /* ECGLUniformMatrix4Attribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2201FDC017318E7D006F2D5E /* ECGLUniformMatrix4Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FDBD17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.m */; };
 		2201FDC117318E7D006F2D5E /* ECGLUniformMatrix4Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FDBD17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.m */; };
+		2201FDC617326368006F2D5E /* ECGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2201FDC417326368006F2D5E /* ECGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2201FDC817326368006F2D5E /* ECGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FDC517326368006F2D5E /* ECGLView.m */; };
+		2201FDC917326368006F2D5E /* ECGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2201FDC517326368006F2D5E /* ECGLView.m */; };
+		2201FDCB1732652D006F2D5E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2201FDCA1732652C006F2D5E /* CoreVideo.framework */; };
 		2260A2EA15DFD7290057C9DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2283A3BB14F52E93009142F7 /* Cocoa.framework */; };
 		2260A39B15DFE2DD0057C9DA /* ECLogging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2260A39815DFE2DD0057C9DA /* ECLogging.framework */; };
 		2260A3A015DFE6860057C9DA /* ECGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2260A2E915DFD7290057C9DA /* ECGL.framework */; };
@@ -113,6 +117,9 @@
 		2201FDB7173187AE006F2D5E /* ECGLBoundAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLBoundAttribute.m; sourceTree = "<group>"; };
 		2201FDBC17318E7B006F2D5E /* ECGLUniformMatrix4Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLUniformMatrix4Attribute.h; sourceTree = "<group>"; };
 		2201FDBD17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLUniformMatrix4Attribute.m; sourceTree = "<group>"; };
+		2201FDC417326368006F2D5E /* ECGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLView.h; sourceTree = "<group>"; };
+		2201FDC517326368006F2D5E /* ECGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLView.m; sourceTree = "<group>"; };
+		2201FDCA1732652C006F2D5E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
 		2260A2E915DFD7290057C9DA /* ECGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2260A2FD15DFD7320057C9DA /* ECGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2260A30C15DFD96D0057C9DA /* IOSDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = IOSDebug.xcconfig; sourceTree = "<group>"; };
@@ -142,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2201FDCB1732652D006F2D5E /* CoreVideo.framework in Frameworks */,
 				2201FDA617314E8C006F2D5E /* OpenGL.framework in Frameworks */,
 				2201FDA417314E85006F2D5E /* GLKit.framework in Frameworks */,
 				2260A39B15DFE2DD0057C9DA /* ECLogging.framework in Frameworks */,
@@ -194,6 +202,7 @@
 		0867D691FE84028FC02AAC07 /* ECFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				2201FDCA1732652C006F2D5E /* CoreVideo.framework */,
 				2260A30B15DFD8FB0057C9DA /* Source */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				226C205C14FBCB8F00D2751B /* Scripts */,
@@ -314,6 +323,8 @@
 		22CA557F13DA09FF007E89E2 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				2201FDC417326368006F2D5E /* ECGLView.h */,
+				2201FDC517326368006F2D5E /* ECGLView.m */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -341,6 +352,7 @@
 				2201FDA817314F4F006F2D5E /* ECGL.h in Headers */,
 				2201FDB8173187AF006F2D5E /* ECGLBoundAttribute.h in Headers */,
 				2201FDBE17318E7C006F2D5E /* ECGLUniformMatrix4Attribute.h in Headers */,
+				2201FDC617326368006F2D5E /* ECGLView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +572,7 @@
 				2201FD9917314A88006F2D5E /* ECGLVertexShader.m in Sources */,
 				2201FDBA173187AF006F2D5E /* ECGLBoundAttribute.m in Sources */,
 				2201FDC017318E7D006F2D5E /* ECGLUniformMatrix4Attribute.m in Sources */,
+				2201FDC817326368006F2D5E /* ECGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +584,7 @@
 				2201FDA217314A94006F2D5E /* ECGLView.m in Sources */,
 				2201FDBB173187AF006F2D5E /* ECGLBoundAttribute.m in Sources */,
 				2201FDC117318E7D006F2D5E /* ECGLUniformMatrix4Attribute.m in Sources */,
+				2201FDC917326368006F2D5E /* ECGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

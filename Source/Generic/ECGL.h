@@ -11,3 +11,4 @@
 #import "ECGLUniformColourAttribute.h"
 #import "ECGLBoundAttribute.h"
 #import "ECGLUniformMatrix4Attribute.h"
+#import "ECGLView.h"
